@@ -1,0 +1,29 @@
+.logbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 14px 20px;
+
+  background: #1E1E1E;
+  border: 1px solid #2C5E49; /* green border */
+  border-radius: 30px;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logbtn:hover {
+  background: rgba(46, 204, 113, 0.1);
+}
+
+.logbtn-icon {
+  width: 18px;
+  height: 18px;
+}
