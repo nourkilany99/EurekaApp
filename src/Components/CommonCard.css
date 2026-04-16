@@ -23,9 +23,11 @@
 }
 
 .common-card-title {
+  width: 70%;
   font-size: 2.4vw;
   color: var(--white);
   font-family: luicy;
+  padding: 5% 0 10% 2%;
 }
 
 .common-card-subtitle {

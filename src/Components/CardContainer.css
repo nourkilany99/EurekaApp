@@ -1,0 +1,172 @@
+.onboarding-container {
+  position: relative;
+  width: 100%;
+  /* Keep space for the floating next button */
+  padding-bottom: 90px;
+}
+
+.onboarding-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.onboarding-track {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  will-change: transform;
+}
+
+.onboarding-slide {
+  flex: 0 0 86%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Override CommonCard width/margins inside the carousel so our math works. */
+.onboarding-slide .common-card {
+  width: 100% !important;
+  /* Keep the original card’s top spacing feel */
+  margin: 5% 0 0 0 !important;
+}
+
+.onboarding-next-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  background: linear-gradient(145deg, #a100ff, #6a00ff);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.onboarding-next-btn:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+}
+
+.onboarding-next-arrow {
+  width: 30%;
+  height: 30%;
+  border-right: 3px solid white;
+  border-top: 3px solid white;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  margin-left: -10%;
+}
+
+.onboarding-step-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.onboarding-step-label {
+  font-size: 1vw;
+  color: var(--white2);
+  font-family: reg;
+}
+
+.upload-box {
+  width: 100%;
+  height: 110px;
+  border-radius: 14px;
+  border: 1px solid #202020;
+  background-color: #2f2f2f38;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.upload-icon {
+  font-size: 1.2vw;
+  line-height: 1;
+}
+
+.upload-text {
+  font-size: 1vw;
+  color: var(--white2);
+  font-family: reg;
+}
+
+.face-frame {
+  width: 100%;
+  height: 40vh;
+  border-radius: 16px;
+  border: 1px solid #202020;
+  background-color: #2f2f2f38;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.face-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.face-corner.tl {
+  top: 14px;
+  left: 14px;
+  border-left: 2px solid #666;
+  border-top: 2px solid #666;
+}
+
+.face-corner.tr {
+  top: 14px;
+  right: 14px;
+  border-right: 2px solid #666;
+  border-top: 2px solid #666;
+}
+
+.face-corner.bl {
+  bottom: 14px;
+  left: 14px;
+  border-left: 2px solid #666;
+  border-bottom: 2px solid #666;
+}
+
+.face-corner.br {
+  bottom: 14px;
+  right: 14px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+}
+
+.face-frame-text {
+  color: var(--white2);
+  font-family: reg;
+  font-size: 1vw;
+}
+
+@media (max-width: 420px) {
+  .onboarding-slide {
+    flex-basis: 92%;
+  }
+}
+
