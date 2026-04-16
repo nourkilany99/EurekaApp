@@ -1,0 +1,40 @@
+.arrow-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin-right: 15%;
+    margin-top: -7%;
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+  
+    /* Gradient background */
+    background: linear-gradient(145deg, #a100ff, #6a00ff);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .arrow-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+  }
+  
+  .arrow {
+    width: 30%;
+    height: 30%;
+  
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+  
+    border-radius: 2px; /* softens the corner */
+  
+    transform: rotate(45deg);
+    margin-left: -10%;
+  }

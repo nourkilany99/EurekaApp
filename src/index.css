@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +11,15 @@ html, body {
   background-color: #252525;
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
 .app-container {
   width: 100%;
   max-width: 414px; /* iPhone 11 width */
@@ -19,59 +27,41 @@ html, body {
   background-color: #141414;
 }
 
-
 :root {
-    --main-color: #2C5E49;
-    --sec-color:#A609F0;
-    --white:#FFFFFF;
-    --white2:#ffffffbe;
-    --pink:#DDAEC5;
+  --main-color: #2C5E49;
+  --sec-color: #A609F0;
+  --white: #FFFFFF;
+  --white2: #ffffffbe;
+  --pink: #DDAEC5;
 }
 
 @font-face {
-    font-family: luicy;
-    font-weight: 100;
-    src: url(fonts/Luicy-Regular\ Demo.ttf);
+  font-family: luicy;
+  font-weight: 100;
+  src: url(fonts/Luicy-Regular Demo.ttf);
 }
 
 @font-face {
-    font-family: Reg;
-    src: url(fonts/AlbertSans-Regular.ttf);
+  font-family: Reg;
+  src: url(fonts/AlbertSans-Regular.ttf);
 }
 
 @font-face {
-    font-family: Semi;
-    src: url(fonts/AlbertSans-SemiBold.ttf);
+  font-family: Semi;
+  src: url(fonts/AlbertSans-SemiBold.ttf);
 }
 
 @font-face {
-    font-family: Bold;
-    src: url(fonts/AlbertSans-Bold.ttf);
+  font-family: Bold;
+  src: url(fonts/AlbertSans-Bold.ttf);
 }
 
 @font-face {
-    font-family: light;
-    src: url(fonts/AlbertSans-Light.ttf);
+  font-family: light;
+  src: url(fonts/AlbertSans-Light.ttf);
 }
 
 @font-face {
-    font-family: decor;
-    src: url(fonts/MeaCulpa-Regular.ttf);
+  font-family: decor;
+  src: url(fonts/MeaCulpa-Regular.ttf);
 }
-
-
-=======
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
->>>>>>> 761edda26f103739785f152d26ef16a31919aa7e
