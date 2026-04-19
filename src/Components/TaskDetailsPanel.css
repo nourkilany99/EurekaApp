@@ -1,0 +1,106 @@
+.task-details-panel {
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 16px;
+}
+
+.task-details-panel__img-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.task-details-panel__img {
+    width: 100%;
+    display: block;
+    vertical-align: middle;
+}
+
+.task-details-panel__title {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.task-details-panel__desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.task-details-panel__divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    margin: 16px 0;
+}
+
+.task-details-panel__price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.task-details-panel__price-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-details-panel__amount {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.task-details-panel__badge {
+    padding: 4px 12px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.task-details-panel__edit {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.task-details-panel__meta.task-meta-list .task-meta-list__row {
+    color: #9ca3af;
+}
+
+.task-details-panel__meta.task-meta-list .task-meta-list__icon {
+    color: #9ca3af;
+}
+
+.task-details-panel__cancel {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 12px;
+    border: none;
+    border-radius: 12px;
+    background: #5c1518;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border: 1px solid rgba(120, 50, 55, 0.6);
+}

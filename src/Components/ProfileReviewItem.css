@@ -1,0 +1,28 @@
+.profile-review-item {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.profile-review-item:last-child {
+    margin-bottom: 0;
+}
+
+.profile-review-item__meta {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.profile-review-item__star {
+    color: #facc15;
+}
+
+.profile-review-item__quote {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #d1d5db;
+}

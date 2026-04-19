@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.profile-page {
+    min-height: 100vh;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 32px;
+}
+
+.profile-page__inner {
+    padding: 0 5% 24px;
+}
+
+.profile-page__detail-line {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.profile-page__detail-line:last-child {
+    margin-bottom: 0;
+}
+
+.profile-page__lbl {
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.profile-page__val {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.profile-page__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+.calender-page {
+    min-height: 100vh;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 32px;
+}
+
+.calender-page__inner {
+    padding: 0 5% 24px;
+}
+
+.calender-page__timeline {
+    margin-top: 8px;
+}
+
+.calender-page__tl-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 52px;
+}
+
+.calender-page__tl-time {
+    flex-shrink: 0;
+    width: 44px;
+    font-size: 11px;
+    color: #a0a0a0;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.calender-page__tl-line {
+    flex: 1;
+    height: 0;
+    border: none;
+    border-top: 2px dotted #374151;
+}
+
+.calender-page__card-slot {
+    margin: 4px 0 8px;
+    padding-left: 54px;
+}

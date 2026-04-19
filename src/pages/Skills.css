@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.skills-page {
+    min-height: 100vh;
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 32px;
+}
+
+.skills-page__inner {
+    padding: 0 5% 24px;
+}
+
+.skills-page__save {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    background: #a020f0;
+    cursor: pointer;
+}
+
+.page-header-back__subtitle {
+    color: #8e8e93;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.skills-page__h2 {
+    margin: 20px 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.skills-page__h2--explore {
+    margin-top: 28px;
+}
+
+.skills-page__add-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.skills-page__explore-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.skills-page__explore-btn.primary-button {
+    margin-top: 20px;
+    background: #a020f0;
+    box-shadow: 0 6px 24px rgba(160, 32, 240, 0.35);
+}

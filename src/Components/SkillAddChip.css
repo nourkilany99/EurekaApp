@@ -1,0 +1,29 @@
+.skill-add-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 12px;
+    border: none;
+    border-radius: 14px;
+    background: #262626;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    width: 100%;
+}
+
+.skill-add-chip--wide {
+    grid-column: 1 / -1;
+}
+
+.skill-add-chip__icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.skill-add-chip__label {
+    text-align: center;
+}

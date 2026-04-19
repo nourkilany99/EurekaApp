@@ -1,0 +1,49 @@
+.tasks-header {
+    padding-bottom: 8px;
+}
+
+.tasks-header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.tasks-header__logo {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-transform: lowercase;
+}
+
+.tasks-header__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 999px;
+    background: #a855f7;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    max-width: 55%;
+}
+
+.tasks-header__location-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tasks-header__tagline {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 500;
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.tasks-page {
+    min-height: 100vh;
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 160px;
+}
+
+.tasks-page__content {
+    padding: 0 5% 24px;
+}
+
+.tasks-page__stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.tasks-page__section-title {
+    margin: 0 0 14px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.tasks-page__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.tasks-page__footer-btn-wrap {
+    position: fixed;
+    left: 5%;
+    right: 5%;
+    bottom: 88px;
+    z-index: 5;
+}
+
+.tasks-page__explore-more.primary-button {
+    width: 100%;
+    border-radius: 999px;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    background: #a020f0;
+    border: none;
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(160, 32, 240, 0.35);
+}
+
+.tasks-page .bottom-nav__inner {
+    background: #1f2937;
+}
+
+.tasks-page .bottom-nav__item--active .bottom-nav__icon-wrap {
+    background: #a855f7;
+    box-shadow: 0 4px 14px rgba(168, 85, 247, 0.45);
+}

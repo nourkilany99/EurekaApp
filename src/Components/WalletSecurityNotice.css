@@ -1,0 +1,62 @@
+.wallet-security-notice {
+    margin-top: 8px;
+}
+
+.wallet-security-notice__title {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.wallet-security-notice__box {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 16px 50px 16px 16px;
+    background: rgba(30, 30, 30, 0.6);
+}
+
+.wallet-security-notice__text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #e5e7eb;
+    font-weight: 400;
+}
+
+.wallet-security-notice__text strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+.wallet-security-notice__badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+}
+
+.wallet-security-notice__c1 {
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: conic-gradient(from 180deg, #f472b6, #fb923c, #facc15, #f472b6);
+    opacity: 0.9;
+}
+
+.wallet-security-notice__c2 {
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: #1f2937;
+}
+
+.wallet-security-notice__c3 {
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ec4899, #f97316);
+}

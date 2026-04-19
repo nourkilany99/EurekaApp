@@ -1,0 +1,86 @@
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.bottom-nav__inner {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+    width: calc(100% - 40px);
+    max-width: 374px;
+    padding: 10px 14px 12px;
+    border-radius: 28px;
+    background: #1e2d24;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.bottom-nav__item {
+    border: none;
+    background: transparent;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 4px 10px;
+    min-width: 56px;
+}
+
+.bottom-nav__item--labeled {
+    opacity: 0.95;
+}
+
+.bottom-nav__icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.bottom-nav__item--active .bottom-nav__icon-wrap {
+    background: #9d27f5;
+    box-shadow: 0 4px 14px rgba(157, 39, 245, 0.45);
+}
+
+.bottom-nav__label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #e5e7eb;
+    letter-spacing: 0.02em;
+}
+
+.bottom-nav__item:first-child .bottom-nav__label {
+    display: none;
+}
+
+.bottom-nav__item--labeled .bottom-nav__icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-nav--tasksBar .bottom-nav__inner {
+    background: #2a2a2a;
+}
+
+.bottom-nav--tasksBar .bottom-nav__item--active .bottom-nav__icon-wrap {
+    background: #a832ff;
+    box-shadow: 0 4px 14px rgba(168, 50, 255, 0.45);
+}

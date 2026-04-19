@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { animate, motion, useMotionValue } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import CommonCard from './CommonCard';
 import './CardContainer.css';
 
@@ -9,6 +10,7 @@ const CardContainer = ({ steps = [], onComplete }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [viewportWidth, setViewportWidth] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
+  const navigate = useNavigate();
 
   const viewportRef = useRef(null);
   const firstSlideRef = useRef(null);
@@ -66,7 +68,8 @@ const CardContainer = ({ steps = [], onComplete }) => {
       return;
     }
     if (typeof onComplete === 'function') onComplete();
-    else console.log('Signup complete');
+    // Last step -> go to Home.
+    navigate('/');
   };
 
   const handleDragEnd = (event, info) => {

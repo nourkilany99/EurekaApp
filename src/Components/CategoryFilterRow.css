@@ -1,0 +1,20 @@
+.category-filter-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.category-filter-row .category-chips {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.category-filter-row__filter {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}

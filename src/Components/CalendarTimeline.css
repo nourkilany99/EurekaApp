@@ -1,0 +1,28 @@
+.calendar-timeline {
+    position: relative;
+    padding-left: 0;
+}
+
+.calendar-timeline__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 52px;
+}
+
+.calendar-timeline__time {
+    flex-shrink: 0;
+    width: 44px;
+    font-size: 11px;
+    color: #a0a0a0;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.calendar-timeline__line {
+    flex: 1;
+    height: 0;
+    border: none;
+    border-top: 2px dotted #374151;
+    margin-top: 0;
+}

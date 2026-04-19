@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.notifications-page {
+    min-height: 100vh;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 32px;
+}
+
+.notifications-page__inner {
+    padding: 0 5% 24px;
+}
+
+.notifications-page__gear {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #2a2a2a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

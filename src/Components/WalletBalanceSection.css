@@ -1,0 +1,60 @@
+.wallet-balance-section {
+    text-align: center;
+    padding: 8px 0 20px;
+}
+
+.wallet-balance-section__big {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.02em;
+    font-family: 'Inter', sans-serif;
+}
+
+.wallet-balance-section__lbl {
+    margin: 8px 0 20px;
+    font-size: 13px;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.wallet-balance-section__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wallet-balance-section__card {
+    border-radius: 16px;
+    padding: 16px 18px;
+    text-align: left;
+}
+
+.wallet-balance-section__card--earned {
+    background: #7c13d4;
+    background: linear-gradient(135deg, #9d27f5 0%, #6b21a8 100%);
+}
+
+.wallet-balance-section__card--pending {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.wallet-balance-section__val {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.wallet-balance-section__cap {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.wallet-balance-section__card--pending .wallet-balance-section__cap {
+    color: #9ca3af;
+}

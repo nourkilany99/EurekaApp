@@ -1,0 +1,67 @@
+.profile-identity-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0 20px;
+}
+
+.profile-identity-bar__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.profile-identity-bar__main {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-identity-bar__name-row {
+    margin: 0 0 4px;
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+.profile-identity-bar__name {
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.profile-identity-bar__age {
+    font-weight: 500;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.profile-identity-bar__subtitle {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #9ca3af;
+    line-height: 1.35;
+}
+
+.profile-identity-bar__rating-pill {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-identity-bar__star {
+    color: #facc15;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.profile-identity-bar__rating-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}

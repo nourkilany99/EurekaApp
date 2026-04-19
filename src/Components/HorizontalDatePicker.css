@@ -1,0 +1,35 @@
+.horizontal-date-picker {
+    margin: 0 -5% 20px;
+    padding: 0 5%;
+}
+
+.horizontal-date-picker__scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+}
+
+.horizontal-date-picker__scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.horizontal-date-picker__day {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    background: #2a2a2a;
+    color: #9ca3af;
+}
+
+.horizontal-date-picker__day--active {
+    background: #9d33ff;
+    color: #fff;
+}

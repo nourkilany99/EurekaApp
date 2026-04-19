@@ -1,0 +1,21 @@
+.stat-pill-card {
+    flex: 1;
+    background: #2a2a2a;
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+}
+
+.stat-pill-card__val {
+    margin: 0 0 6px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.stat-pill-card__lbl {
+    margin: 0;
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 500;
+}

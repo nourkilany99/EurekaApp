@@ -1,0 +1,48 @@
+.profile-section-card {
+    background: #1e1e1e;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.profile-section-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.profile-section-card__pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6b21a8 0%, #4c1d95 100%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-family: 'Inter', sans-serif;
+}
+
+.profile-section-card__edit {
+    border: none;
+    background: transparent;
+    color: #e5e7eb;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-section-card__edit-spacer {
+    width: 24px;
+    height: 24px;
+}
+
+.profile-section-card__body {
+    font-size: 14px;
+    color: #e5e7eb;
+    line-height: 1.55;
+}

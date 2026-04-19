@@ -1,0 +1,74 @@
+.task-summary-card {
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 22px;
+}
+
+.task-summary-card__img-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.task-summary-card__img {
+    width: 100%;
+    display: block;
+    vertical-align: middle;
+}
+
+.task-summary-card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.task-summary-card__left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-summary-card__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.task-summary-card__rate {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #facc15;
+}
+
+.task-summary-card__star {
+    color: #facc15;
+    font-size: 14px;
+}
+
+.task-summary-card__price {
+    font-size: 17px;
+    font-weight: 800;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.task-summary-card__meta.task-meta-list {
+    gap: 10px;
+}
+
+.task-summary-card__meta.task-meta-list .task-meta-list__row {
+    color: #9ca3af;
+}
+
+.task-summary-card__meta.task-meta-list .task-meta-list__icon {
+    color: #9ca3af;
+}

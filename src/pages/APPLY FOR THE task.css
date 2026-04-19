@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.apply-for-task-page {
+    min-height: 100vh;
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.apply-for-task-page__scroll {
+    padding: 0 5% 24px;
+}
+
+.apply-for-task-page__inner {
+    max-width: 100%;
+}
+
+.apply-for-task-page__profile-caption {
+    margin: 12px 0 20px;
+    font-size: 11px;
+    color: #9ca3af;
+    text-align: center;
+    font-weight: 500;
+}
+
+.apply-for-task-page__section {
+    margin-bottom: 22px;
+}
+
+.apply-for-task-page__label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.apply-for-task-page__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.apply-for-task-page__count {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.apply-for-task-page__textarea {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111827;
+    resize: vertical;
+    min-height: 120px;
+    box-sizing: border-box;
+}
+
+.apply-for-task-page__textarea::placeholder {
+    color: #6b7280;
+}
+
+.apply-for-task-page__hint {
+    margin: 8px 0 0;
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.45;
+}
+
+.apply-for-task-page__section-title {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.apply-for-task-page__options {
+    display: flex;
+    flex-direction: column;
+}
+
+.apply-for-task-page__fixed-budget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.apply-for-task-page__fb-label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.apply-for-task-page__fb-val {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.apply-for-task-page__offer {
+    border-radius: 12px;
+    padding: 12px 14px 10px;
+    background: #ffffff;
+    color: #111827;
+}
+
+.apply-for-task-page__offer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.apply-for-task-page__negotiable {
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8a2be2 0%, #6b21a8 100%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.apply-for-task-page__offer-input {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f3f4f6;
+}
+
+.apply-for-task-page__offer-prefix {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.apply-for-task-page__offer-num {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: #111827;
+}
+
+.apply-for-task-page__range {
+    margin: 8px 0 0;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.apply-for-task-page__similar-title {
+    margin: 28px 0 14px;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: #fff;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.apply-for-task-page__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}

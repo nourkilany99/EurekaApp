@@ -1,0 +1,28 @@
+.task-meta-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-meta-list__row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.task-meta-list__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #9ca3af;
+}
+
+.task-meta-list__text {
+    line-height: 1.3;
+}

@@ -1,0 +1,305 @@
+.task-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: inherit;
+}
+
+/* Ongoing Card */
+.task-card.ongoing-card {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+.ongoing-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,10,10,0.95) 10%, rgba(10,10,10,0.6) 60%, rgba(0,0,0,0) 100%);
+    z-index: 1;
+}
+.ongoing-content {
+    position: relative;
+    z-index: 2;
+    padding: 15px 20px;
+}
+.ongoing-status {
+    font-size: 11px;
+    color: #ccc;
+    font-weight: 500;
+}
+.ongoing-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 4px 0;
+    letter-spacing: 0.5px;
+}
+.ongoing-subtitle {
+    font-size: 11px;
+    color: #aaa;
+    margin: 0;
+}
+.ongoing-time {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(80,80,80,0.5);
+    backdrop-filter: blur(5px);
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    z-index: 2;
+}
+
+/* Recommended */
+.task-card.recommended-card {
+    min-width: 260px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: start;
+    border-radius: 20px;
+}
+.recommended-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+    z-index: 1;
+}
+.recommended-top, .recommended-bottom {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+}
+.recommended-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.recommended-points-container {
+    background: rgba(60, 70, 60, 0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
+    width: 36px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.recommended-points {
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+}
+.recommended-points::before {
+    content: "🛡️";
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+.recommended-time {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.time-val { font-size: 12px; font-weight: bold; line-height: 1; }
+.time-lbl { font-size: 9px; line-height: 1; color: #ccc;}
+
+.recommended-bottom {
+    padding-bottom: 20px;
+}
+.recommended-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+.recommended-subtitle {
+    font-size: 11px;
+    color: #ccc;
+    margin: 0;
+}
+
+/* Volunteer Card */
+.task-card.volunteer-card {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+}
+.volunteer-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+    z-index: 1;
+}
+.volunteer-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 15px;
+}
+.volunteer-points {
+    font-size: 10px;
+    color: #ffde59;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+.dot-yellow {
+    width: 6px;
+    height: 6px;
+    background-color: #ffde59;
+    border-radius: 50%;
+    display: inline-block;
+}
+.volunteer-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Available Card */
+.task-card.available-card {
+    width: 100%;
+    aspect-ratio: 0.75;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 16px;
+}
+.available-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+    z-index: 1;
+}
+.available-price {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: black;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 10px;
+    z-index: 2;
+}
+.available-content {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+    margin-top: auto;
+}
+.available-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+}
+.available-subtitle {
+    font-size: 10px;
+    color: #bbb;
+    margin: 0;
+}
+
+/* Tasks browse grid (2-column) */
+.task-card.tasks-grid-card {
+    position: relative;
+    min-height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #581c87;
+}
+
+.tasks-grid-card__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #a5f3fc 0%, #581c87 78%);
+    z-index: 0;
+}
+
+.tasks-grid-card__image {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+    width: 88%;
+    height: 62%;
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.tasks-grid-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0.55) 72%,
+        rgba(0, 0, 0, 0.92) 100%
+    );
+    z-index: 2;
+}
+
+.tasks-grid-card__price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 4;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(168, 85, 247, 0.95);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+}
+
+.tasks-grid-card__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    padding: 12px 12px 14px;
+}
+
+.tasks-grid-card__title {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+}
+
+.tasks-grid-card__subtitle {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #9ca3af;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
