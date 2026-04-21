@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.learn-more-page {
+    min-height: 100vh;
+    background: #111214;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 110px;
+}
+
+.learn-more-page__screen {
+    position: relative;
+    min-height: calc(100vh - 40px);
+    overflow: hidden;
+}
+
+.learn-more-page .frame-back-header__title {
+    font-size: 40px;
+    line-height: 0.83;
+}
+
+.learn-more-page__progress-card {
+    margin: 10px 16px 0;
+    border-radius: 8px;
+    padding: 10px;
+    background: linear-gradient(135deg, #5b1c77 0%, #3d144f 45%, #2a1038 100%);
+}
+
+.learn-more-page__progress-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #efe7f5;
+    margin-bottom: 8px;
+}
+
+.learn-more-page__track {
+    height: 13px;
+    border-radius: 999px;
+    background: #171417;
+    padding: 2px;
+}
+
+.learn-more-page__bar {
+    width: 74%;
+    height: 100%;
+    border-radius: 999px;
+    background: #7c229f;
+}
+
+.learn-more-page__copy {
+    margin: 14px 16px 0;
+    font-size: 11px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.learn-more-page__links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 136px;
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+}
+
+.learn-more-page__links button {
+    border: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 10px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.learn-more-page__links button:last-child {
+    color: rgba(255, 255, 255, 0.46);
+    font-size: 9px;
+}
+
+.learn-more-page__artwork {
+    position: absolute;
+    left: -28px;
+    right: -22px;
+    bottom: 78px;
+    height: 182px;
+    pointer-events: none;
+}
+
+.learn-more-page__rainbow {
+    position: absolute;
+    left: -54px;
+    bottom: -36px;
+    width: 300px;
+    height: 220px;
+    border-radius: 48% 52% 52% 48%;
+    background:
+        radial-gradient(circle at 35% 62%, transparent 35px, #f18f01 38px 50px, #ef6f00 50px 62px, #e34032 62px 74px, #b226d6 74px 86px, transparent 86px),
+        radial-gradient(circle at 55% 70%, #1f9d6a 0 30px, #ffffff 31px 34px, #255b45 35px 46px, transparent 47px),
+        radial-gradient(circle at 68% 72%, #1f9d6a 0 36px, #ffffff 37px 40px, #255b45 41px 56px, transparent 57px);
+}
+
+.learn-more-page__badge {
+    position: absolute;
+    left: 114px;
+    bottom: 22px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #255b45;
+    border: 4px solid #f8f3ff;
+    color: #effff4;
+    font-size: 26px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+}

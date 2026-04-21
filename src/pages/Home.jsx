@@ -6,9 +6,11 @@ import profileIMG from '../Assets/IMG/profileIMG.svg';
 import Wallet from '../Assets/IMG/Wallet.svg';
 import notification from '../Assets/IMG/notific.svg';
 import TaskCard from '../Components/TaskCard';
+import maps from '../Assets/IMG/maps_code.svg'
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    const calendarDays = [1, 2, 3, 4, 5, 6, 7, 8];
+    const calendarDays = [1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12,13,14,15,16];
 
     const recommendedFilters = [
         { id: 'withinHours', label: 'Within hours', icon: '⏳', active: true },
@@ -31,6 +33,15 @@ const Home = () => {
             variant: 'recommended',
             title: 'Pet walking',
             subtitle: 'Getting the dog to walk around the hou...',
+            points: '24',
+            time: '--',
+            bgImage: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=600&auto=format&fit=crop',
+        },
+        {
+            id: 'HouseSitting',
+            variant: 'recommended',
+            title: 'House sitting',
+            subtitle: 'Take care of the plants all ove...',
             points: '24',
             time: '--',
             bgImage: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=600&auto=format&fit=crop',
@@ -122,9 +133,13 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="header-icons">
-                    <div className="icon-bg"><img src={Wallet} alt='Wallet' /></div>
+                        <Link  to="/wallet">
+                        <div className="icon-bg"><img src={Wallet} alt='Wallet' /></div>
+                        </Link>
                     <div className="icon-bg notific-icon">
-                        <img src={notification} alt='Notifications' />
+                        <Link  to="/notifications">
+                            <img src={notification} alt='Notifications' />
+                        </Link>
                         <span className="red-dot"></span>
                     </div>
                 </div>
@@ -138,12 +153,15 @@ const Home = () => {
                         <p>Your account is under review.</p>
                         <span>Verification is in progress - this usually takes a short time.</span>
                     </div>
-                    <button className="warning-btn">Learn more</button>
+                    <Link to="/learn-more">
+                        <button className="warning-btn">Learn more</button>
+                    </Link>
                 </div>
 
                 {/* Calendar */}
                 <div className="section">
                     <h2 className="section-title">CALENDAR <span className="section-subtitle">/(Track your tasks)</span></h2>
+                    
                     <div className="calendar-scroll">
                         {calendarDays.map((day) => (
                             <div key={day} className={`cal-day ${day === 3 ? 'active' : ''}`}>{day}</div>
@@ -172,7 +190,9 @@ const Home = () => {
                             >
                                 {filter.icon && <span className="icon">{filter.icon}</span>} {filter.label}
                             </button>
+                            
                         ))}
+                       
                     </div>
 
                     <div className="horizontal-list">
@@ -219,12 +239,12 @@ const Home = () => {
                 <div className="section mt-4">
                     <h2 className="section-title">NEARBY TASKS<br/>MAP PREVIEW</h2>
                     <div className="map-preview">
-                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=600&auto=format&fit=crop" alt="Map" />
+                        <img src={maps} alt=""  />
                         <div className="map-pin p1">📍</div>
                         <div className="map-pin p2">📍</div>
                         <div className="map-pin p3">📍</div>
                         <div className="map-card">
-                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=100&auto=format&fit=crop" alt="" />
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=600&auto=format&fit=crop "  alt="" />
                             <span>23$</span>
                         </div>
                     </div>

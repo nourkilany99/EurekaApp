@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.feed-page {
+    min-height: 100vh;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 110px;
+}
+
+.feed-page__content {
+    padding: 18px 5% 24px;
+}
+
+.feed-page__title {
+    margin: 8px 0 8px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.feed-page__copy {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.72);
+}
+

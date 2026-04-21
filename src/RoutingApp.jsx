@@ -13,6 +13,23 @@ import MyTasks from './pages/my Tasks';
 import RequestsDetails from './pages/Requests details';
 import ApplyForTheTask from './pages/APPLY FOR THE task';
 import Requests from './pages/Requests';
+import AccountUnderReview from './pages/AccountUnderReview';
+import JobsOnMaps from './pages/JobsOnMaps';
+import Feed from './pages/Feed';
+import Volunteer from './pages/Volunteer';
+import LearnMore from './pages/Learn more';
+import MapsOpen from './pages/maps open';
+import Volenteer from './pages/Volenteer';
+import HelpSupport from './pages/HelpSupport';
+import ReviewsRatings from './pages/ReviewsRatings';
+import TaskHistory from './pages/TaskHistory';
+import Search from './pages/Search';
+import Messages from './pages/Messages';
+import Chat from './pages/Chat';
+import PaymentSetup from './pages/PaymentSetup';
+import EditProfile from './pages/EditProfile';
+import Settings from './pages/Settings';
+import BottomNav from './Components/BottomNav';
 
 const RoutingApp = () => {
     return (
@@ -32,7 +49,24 @@ const RoutingApp = () => {
                     <Route path="/requests/details" element={<RequestsDetails />} />
                     <Route path="/apply-for-the-task" element={<ApplyForTheTask />} />
                     <Route path="/requests" element={<Requests />} />
+                    <Route path="/account-under-review" element={<AccountUnderReview />} />
+                    <Route path="/jobs-on-maps" element={<JobsOnMaps />} />
+                    <Route path="/feed" element={<Feed />} />
+                    <Route path="/volunteer" element={<Volunteer />} />
+                    <Route path="/learn-more" element={<LearnMore />} />
+                    <Route path="/maps-open" element={<MapsOpen />} />
+                    <Route path="/volenteer" element={<Volenteer />} />
+                    <Route path="/help-support" element={<HelpSupport />} />
+                    <Route path="/reviews-ratings" element={<ReviewsRatings />} />
+                    <Route path="/task-history" element={<TaskHistory />} />
+                    <Route path="/search" element={<Search />} />
+                    <Route path="/messages" element={<Messages />} />
+                    <Route path="/chat" element={<Chat />} />
+                    <Route path="/payment-setup" element={<PaymentSetup />} />
+                    <Route path="/edit-profile" element={<EditProfile />} />
+                    <Route path="/settings" element={<Settings />} />
                 </Routes>
+                <BottomNav />
             </BrowserRouter>
         </>
     );

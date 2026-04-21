@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import MobileTool from '../Components/MobileTool';
 import PageHeaderBack from '../Components/PageHeaderBack';
 import RequestCard from '../Components/RequestCard';
-import BottomNav from '../Components/BottomNav';
 import './Requests.css';
 
 const Requests = () => {
@@ -16,7 +15,6 @@ const Requests = () => {
                 <PageHeaderBack titleLines={['PENDING', 'REQUESTS']} />
                 <RequestCard onDetails={() => navigate('/requests/details')} />
             </div>
-            <BottomNav active="home" />
         </div>
     );
 };

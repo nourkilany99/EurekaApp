@@ -10,7 +10,7 @@
 }
 
 .content-pad {
-    padding: 0 5%;
+    padding: 0 5% 15% 5%;
 }
 
 .mt-4 { margin-top: 30px; }
@@ -65,7 +65,7 @@
     align-items: center;
     position: relative;
 }
-.icon-bg img { width: 18px; }
+.icon-bg img { width: 28px; }
 .red-dot {
     position: absolute;
     top: 10px;
@@ -81,7 +81,7 @@
     background-color: #1e1e19;
     border: 1px solid #3d3b1f;
     border-radius: 16px;
-    padding: 15px;
+    padding: 15px 15px 50px 15px;
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -133,6 +133,10 @@
     margin: 0 0 15px 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
 }
 .section-subtitle {
     font-size: 11px;
@@ -151,7 +155,7 @@
     font-size: 32px;
     font-weight: 400;
     color: #fff;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 /* Calendar Scroll */

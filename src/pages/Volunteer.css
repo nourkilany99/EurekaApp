@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.vol-page {
+    min-height: 100vh;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 110px;
+}
+
+.vol-page__content {
+    padding: 18px 5% 24px;
+}
+
+.vol-page__title {
+    margin: 8px 0 16px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.vol-page__list {
+    display: grid;
+    gap: 10px;
+}
+

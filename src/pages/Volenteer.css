@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.volenteer-page {
+    min-height: 100vh;
+    background: #111214;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 110px;
+}
+
+.volenteer-page__screen {
+    padding: 14px 16px 0;
+}
+
+.volenteer-page__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.volenteer-page__header h1 {
+    margin: 0;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    letter-spacing: 0.04em;
+}
+
+.volenteer-page__header p {
+    margin: 0;
+    height: 30px;
+    border-radius: 11px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1d1f22;
+    font-size: 13px;
+}
+
+.volenteer-page__coin {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #f0b90b;
+    box-shadow: 0 0 0 2px rgba(240, 185, 11, 0.2);
+}
+
+.volenteer-page__list {
+    display: grid;
+    gap: 6px;
+}
+
+.volenteer-page__card {
+    position: relative;
+    height: 50px;
+    border-radius: 9px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.volenteer-page__card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.volenteer-page__card-content {
+    position: relative;
+    z-index: 1;
+    padding: 7px 10px;
+}
+
+.volenteer-page__points {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 9px;
+}
+
+.volenteer-page__task-title {
+    margin: 2px 0 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.03em;
+}

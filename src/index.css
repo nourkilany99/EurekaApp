@@ -7,8 +7,8 @@
 html, body {
   width: 100%;
   overflow-x: hidden; /* kills side scroll bug */
-  font-family: sans-serif;
-  background-color: #252525;
+  font-family: 'Albert Regular', sans-serif;
+  background-color: #141414;
 }
 
 body {
@@ -24,7 +24,7 @@ code {
   width: 100%;
   max-width: 414px; /* iPhone 11 width */
   margin: 0 auto;
-  background-color: #141414;
+  background-color: #141414 !important;
 }
 
 :root {
@@ -36,19 +36,25 @@ code {
 }
 
 @font-face {
-  font-family: luicy;
-  font-weight: 100;
-  src: url(fonts/Luicy-Regular Demo.ttf);
+  font-family: 'Luicy';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/Luicy-Regular\ Demo.ttf),
+
 }
 
 @font-face {
-  font-family: Reg;
-  src: url(fonts/AlbertSans-Regular.ttf);
+  font-family: 'Albert Semi Bold';
+  font-style: normal;
+  font-weight: 600;
+  src: url(./fonts/AlbertSans-Regular.ttf),
 }
 
 @font-face {
-  font-family: Semi;
-  src: url(fonts/AlbertSans-SemiBold.ttf);
+  font-family: 'Albert Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/AlbertSans-SemiBold.ttf),
 }
 
 @font-face {
@@ -64,4 +70,25 @@ code {
 @font-face {
   font-family: decor;
   src: url(fonts/MeaCulpa-Regular.ttf);
+}
+
+#root {
+  background-color: #141414 !important;
+}
+
+div[class$='-page'],
+div[class$='-container'] {
+  background-color: #141414 !important;
+}
+
+h1, h2, h3, .font-title {
+  font-family: 'Luicy', sans-serif !important;
+}
+
+strong, b, .semibold, .font-semibold {
+  font-family: 'Albert Semi Bold', sans-serif !important;
+}
+
+body, p, span, label, input, textarea, button, li, a, .font-regular {
+  font-family: 'Albert Regular', sans-serif;
 }

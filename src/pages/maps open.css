@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.maps-open-page {
+    min-height: 100vh;
+    background: #111214;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 110px;
+}
+
+.maps-open-page__screen {
+    min-height: calc(100vh - 40px);
+}
+
+.maps-open-page .frame-back-header {
+    padding-bottom: 6px;
+}
+
+.maps-open-page .frame-back-header__title {
+    font-size: 37px;
+    line-height: 0.85;
+}
+
+.maps-open-page .frame-back-header__chip {
+    margin-top: 8px;
+    padding: 4px 10px;
+}
+
+.maps-open__map {
+    margin: 0 16px;
+    position: relative;
+    height: 452px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.maps-open__map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.84) contrast(1.04);
+}
+
+.maps-open__tag {
+    position: absolute;
+    left: 24px;
+    top: 70px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    background: rgba(53, 21, 73, 0.86);
+    color: #eed3ff;
+}
+
+.maps-open__pin {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.maps-open__pin::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid currentColor;
+    transform: translateX(-50%);
+}
+
+.maps-open__pin--light {
+    background: #f8e8f3;
+    color: #f8e8f3;
+}
+
+.maps-open__pin--purple {
+    background: #ab20ff;
+    color: #ab20ff;
+}
+
+.maps-open__pin--red {
+    background: #f54545;
+    color: #f54545;
+}
+
+.maps-open__handle {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.maps-open__sheet {
+    margin: 8px 16px 0;
+    border-radius: 26px 26px 0 0;
+    padding: 16px 14px 12px;
+    background: radial-gradient(140% 160% at 0% 0%, #432062 0%, #2c133f 40%, #19131f 100%);
+    transform: translateY(78%);
+    transition: transform 280ms ease;
+}
+
+.maps-open__sheet--open {
+    transform: translateY(0);
+}
+
+.maps-open__kicker {
+    margin: 0;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.maps-open__title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 3px;
+}
+
+.maps-open__title-row h2 {
+    margin: 0;
+    font-size: 33px;
+    line-height: 1;
+    font-weight: 400;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.03em;
+}
+
+.maps-open__title-row span {
+    margin-top: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 10px;
+    border-radius: 999px;
+    padding: 3px 8px;
+}
+
+.maps-open__emoji {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.maps-open__description {
+    margin: 4px 0 12px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.maps-open__sheet button {
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    padding: 9px 12px;
+    background: linear-gradient(90deg, #a415f6, #cb2ff4);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}

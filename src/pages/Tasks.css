@@ -35,17 +35,18 @@
 }
 
 .tasks-page__footer-btn-wrap {
-    position: fixed;
-    left: 5%;
-    right: 5%;
-    bottom: 88px;
-    z-index: 5;
+    
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .tasks-page__explore-more.primary-button {
-    width: 100%;
+    width: 90%;
     border-radius: 999px;
-    padding: 14px 20px;
+    padding: 14px 5%;
     font-size: 15px;
     font-weight: 700;
     background: #a020f0;

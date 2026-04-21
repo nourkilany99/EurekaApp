@@ -6,7 +6,6 @@ import TaskSummaryCard from '../Components/TaskSummaryCard';
 import SelectionOption from '../Components/SelectionOption';
 import SafetyFirst from '../Components/SafetyFirst';
 import TaskCard from '../Components/TaskCard';
-import BottomNav from '../Components/BottomNav';
 import PrimaryButton from '../Components/PrimaryButton';
 import './APPLY FOR THE task.css';
 
@@ -148,7 +147,6 @@ const ApplyForTheTask = () => {
                     <PrimaryButton type="button">Explore more</PrimaryButton>
                 </div>
             </div>
-            <BottomNav active="home" />
         </div>
     );
 };

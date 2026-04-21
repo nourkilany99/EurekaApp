@@ -5,7 +5,6 @@ import OngoingWideTaskCard from '../Components/OngoingWideTaskCard';
 import StatPillCard from '../Components/StatPillCard';
 import CategoryFilterRow from '../Components/CategoryFilterRow';
 import TaskCard from '../Components/TaskCard';
-import BottomNav from '../Components/BottomNav';
 import PrimaryButton from '../Components/PrimaryButton';
 import './Tasks.css';
 
@@ -76,7 +75,6 @@ const MyTasksPage = () => (
                 ))}
             </div>
         </div>
-        <BottomNav active="home" tone="tasksBar" />
         <div className="tasks-page__footer-btn-wrap">
             <PrimaryButton type="button" className="tasks-page__explore-more">
                 Explore more

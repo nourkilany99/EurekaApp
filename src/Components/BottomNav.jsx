@@ -1,92 +1,126 @@
 import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import './BottomNav.css';
+
+const TasksIcon = () => (
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" aria-hidden>
+        <rect x="5" y="4.5" width="14" height="15" rx="2.5" stroke="currentColor" strokeWidth="1.55" />
+        <path d="M9 8.5h6M9 12h6M9 15.5h3.8" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" />
+    </svg>
+);
+
+const GridIcon = () => (
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" aria-hidden>
+        <rect x="4.5" y="4.5" width="6.2" height="6.2" rx="1.4" stroke="currentColor" strokeWidth="1.55" />
+        <rect x="13.3" y="4.5" width="6.2" height="6.2" rx="1.4" stroke="currentColor" strokeWidth="1.55" />
+        <rect x="4.5" y="13.3" width="6.2" height="6.2" rx="1.4" stroke="currentColor" strokeWidth="1.55" />
+        <rect x="13.3" y="13.3" width="6.2" height="6.2" rx="1.4" stroke="currentColor" strokeWidth="1.55" />
+    </svg>
+);
 
 const HomeIcon = () => (
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
         <path
-            d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-5v-6H10v6H5a1 1 0 01-1-1v-9.5z"
+            d="M4.5 10.8L12 4.8l7.5 6V19a1.5 1.5 0 01-1.5 1.5h-3.7v-5.3h-4.6v5.3H6A1.5 1.5 0 014.5 19v-8.2z"
             stroke="currentColor"
-            strokeWidth="1.7"
+            strokeWidth="1.75"
             strokeLinejoin="round"
         />
     </svg>
 );
 
-const TasksIcon = () => (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
-        <path
-            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-        />
-        <path
-            d="M9 5a2 2 0 012-2h2a2 2 0 012 2v0a2 2 0 01-2 2h-2a2 2 0 01-2-2v0z"
-            stroke="currentColor"
-            strokeWidth="1.6"
-        />
-        <path d="M9 12h6M9 16h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-);
-
 const FeedIcon = () => (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
-        <path d="M4 5h16v14H4V5z" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M8 9h8M8 13h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-        <path d="M8 17h3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" aria-hidden>
+        <rect x="4.6" y="5" width="14.8" height="14" rx="2.3" stroke="currentColor" strokeWidth="1.55" />
+        <path d="M8.1 9h7.8M8.1 12.6h7.8M8.1 16.2h4.6" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" />
     </svg>
 );
 
-const ProfileIcon = () => (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
-        <circle cx="12" cy="9" r="3.5" stroke="currentColor" strokeWidth="1.6" />
+const VolunteerIcon = () => (
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" aria-hidden>
+        <circle cx="8.1" cy="8.2" r="2.5" stroke="currentColor" strokeWidth="1.55" />
+        <circle cx="15.9" cy="8.2" r="2.5" stroke="currentColor" strokeWidth="1.55" />
         <path
-            d="M6 20v-1a4 4 0 014-4h4a4 4 0 014 4v1"
+            d="M3.8 18.8v-.7a3.8 3.8 0 013.8-3.8h1.1a3.8 3.8 0 013.8 3.8v.7M11.5 18.8v-.6a3.6 3.6 0 013.6-3.6h1.2a3.6 3.6 0 013.6 3.6v.6"
             stroke="currentColor"
-            strokeWidth="1.6"
+            strokeWidth="1.55"
             strokeLinecap="round"
         />
     </svg>
 );
 
-const BottomNav = ({ active = 'home', tone = 'default' }) => (
-    <nav className={`bottom-nav bottom-nav--${tone}`} aria-label="Main">
-        <div className="bottom-nav__inner">
-            <button
-                type="button"
-                className={`bottom-nav__item ${active === 'home' ? 'bottom-nav__item--active' : ''}`}
-                aria-current={active === 'home' ? 'page' : undefined}
-            >
-                <span className="bottom-nav__icon-wrap">
-                    <HomeIcon />
-                </span>
-            </button>
-            <button
-                type="button"
-                className={`bottom-nav__item bottom-nav__item--labeled ${
-                    active === 'tasks' ? 'bottom-nav__item--active' : ''
-                }`}
-                aria-current={active === 'tasks' ? 'page' : undefined}
-            >
-                <span className="bottom-nav__icon-wrap">
-                    <TasksIcon />
-                </span>
-                <span className="bottom-nav__label">Tasks</span>
-            </button>
-            <button type="button" className="bottom-nav__item bottom-nav__item--labeled">
-                <span className="bottom-nav__icon-wrap">
-                    <FeedIcon />
-                </span>
-                <span className="bottom-nav__label">Feed</span>
-            </button>
-            <button type="button" className="bottom-nav__item bottom-nav__item--labeled">
-                <span className="bottom-nav__icon-wrap">
-                    <ProfileIcon />
-                </span>
-                <span className="bottom-nav__label">Profile</span>
-            </button>
-        </div>
-    </nav>
-);
+const NAV_ITEMS = [
+    {
+        key: 'tasks',
+        to: '/requests',
+        label: 'Tasks',
+        icon: <TasksIcon />,
+        isActiveRoute: (pathname) =>
+            pathname.startsWith('/requests') ||
+            pathname.startsWith('/jobs-on-maps') ||
+            pathname.startsWith('/maps-open'),
+    },
+    {
+        key: 'myTasks',
+        to: '/my-tasks',
+        label: 'My Tasks',
+        icon: <GridIcon />,
+        isActiveRoute: (pathname) => pathname.startsWith('/my-tasks'),
+    },
+    {
+        key: 'home',
+        to: '/',
+        label: 'Home',
+        icon: <HomeIcon />,
+        isCenter: true,
+        isActiveRoute: (pathname) => pathname === '/' || pathname.startsWith('/apply-for-the-task'),
+    },
+    {
+        key: 'feed',
+        to: '/feed',
+        label: 'Feed',
+        icon: <FeedIcon />,
+        isActiveRoute: (pathname) => pathname.startsWith('/feed'),
+    },
+    {
+        key: 'volunteer',
+        to: '/volunteer',
+        label: 'Volunteer',
+        icon: <VolunteerIcon />,
+        isActiveRoute: (pathname) => pathname.startsWith('/volunteer') || pathname.startsWith('/volenteer'),
+    },
+];
+
+const BottomNav = () => {
+    const { pathname } = useLocation();
+
+    return (
+        <nav className="bottom-nav" aria-label="Main">
+            <div className="bottom-nav__inner">
+                {NAV_ITEMS.map((item) => {
+                    const isActive = item.isActiveRoute(pathname);
+
+                    return (
+                        <NavLink
+                            key={item.key}
+                            to={item.to}
+                            aria-label={item.label}
+                            className={[
+                                'bottom-nav__item',
+                                item.isCenter ? 'bottom-nav__item--center' : 'bottom-nav__item--default',
+                                isActive ? 'bottom-nav__item--active' : '',
+                            ]
+                                .filter(Boolean)
+                                .join(' ')}
+                        >
+                            <span className="bottom-nav__icon-wrap">{item.icon}</span>
+                            {!item.isCenter && <span className="bottom-nav__label">{item.label}</span>}
+                        </NavLink>
+                    );
+                })}
+            </div>
+        </nav>
+    );
+};
 
 export default BottomNav;

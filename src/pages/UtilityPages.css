@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.utility-page {
+    min-height: 100vh;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 110px;
+}
+
+.utility-page__inner {
+    padding: 0 5% 24px;
+}
+
+.utility-block {
+    background: #171717;
+    border: 1px solid #252525;
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.utility-section-title {
+    margin: 18px 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.utility-search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1f1f21;
+    border-radius: 14px;
+    border: 1px solid #262626;
+    padding: 12px 14px;
+    color: #a3a3a3;
+    margin-bottom: 14px;
+}
+
+.utility-search input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.utility-search input::placeholder { color: #777; }
+
+.utility-search.utility-search--tight {
+    margin: 0;
+}
+
+.utility-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.utility-action-card {
+    background: #1b1b1d;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.utility-action-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+    background: rgba(168, 36, 255, 0.15);
+    color: #c94cff;
+}
+
+.faq-card {
+    background: #161617;
+    border: 1px solid #242426;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.faq-item + .faq-item { border-top: 1px solid #242426; }
+
+.faq-item__btn {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px;
+}
+
+.faq-item__body {
+    padding: 0 14px 14px;
+    font-size: 12px;
+    color: #b2b2b2;
+    line-height: 1.45;
+}
+
+.support-cta {
+    margin-top: 14px;
+    background: linear-gradient(145deg, #b600ff, #5f00ff);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.support-cta h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.03em;
+}
+
+.support-cta p {
+    margin: 0 0 14px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 13px;
+}
+
+.support-cta__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.utility-pill-btn {
+    border: none;
+    height: 38px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.reviews-summary {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.reviews-summary__top {
+    display: flex;
+    gap: 14px;
+}
+
+.reviews-score {
+    min-width: 92px;
+}
+
+.reviews-score__value {
+    margin: 0;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 0.95;
+}
+
+.reviews-score__stars { color: #ffc926; }
+.reviews-score__count {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #9a9a9a;
+}
+
+.reviews-bars { flex: 1; }
+
+.reviews-bar {
+    display: grid;
+    grid-template-columns: 16px 1fr 24px;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: #bdbdbd;
+}
+
+.reviews-bar__track {
+    height: 6px;
+    border-radius: 999px;
+    background: #2b2b2d;
+    overflow: hidden;
+}
+
+.reviews-bar__fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffb700, #b100ff);
+}
+
+.reviews-metrics {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    text-align: center;
+}
+
+.reviews-metrics strong {
+    display: block;
+    color: #af3fff;
+    font-size: 20px;
+}
+
+.reviews-metrics span {
+    color: #878787;
+    font-size: 11px;
+}
+
+.utility-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-bottom: 14px;
+}
+
+.utility-tab {
+    border: 1px solid #2a2a2a;
+    background: #1b1b1d;
+    color: #bdbdbd;
+    border-radius: 999px;
+    padding: 8px 14px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.utility-tab.is-active {
+    background: #a824ff;
+    border-color: #a824ff;
+    color: #fff;
+}
+
+.review-card {
+    background: #161618;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.review-card__top {
+    display: flex;
+    gap: 10px;
+}
+
+.utility-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #2a2a2a;
+    font-size: 18px;
+}
+
+.review-card__name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.review-card__meta {
+    margin: 2px 0 6px;
+    font-size: 11px;
+    color: #909090;
+}
+
+.review-card__text {
+    margin: 0;
+    font-size: 13px;
+    color: #d8d8d8;
+    line-height: 1.35;
+}
+
+.review-card__actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 16px;
+    color: #8a8a8a;
+    font-size: 11px;
+}
+
+.task-history-card {
+    background: #161618;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.task-history-card__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-history-card h4 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.task-history-muted {
+    margin: 0;
+    color: #8f8f8f;
+    font-size: 12px;
+}
+
+.task-price-badge {
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(66, 198, 140, 0.16);
+    color: #47d899;
+    border: 1px solid rgba(66, 198, 140, 0.22);
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+}
+
+.task-history-actions {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.task-history-btn {
+    border: 1px solid #3a3a3c;
+    background: #252527;
+    color: #e5e5e5;
+    font-size: 13px;
+    height: 34px;
+    border-radius: 10px;
+}
+
+.payment-history-btn {
+    width: 100%;
+    height: 44px;
+}
+
+.status-chip {
+    margin-top: 8px;
+    display: inline-block;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(155, 44, 44, 0.2);
+    color: #e87979;
+    border: 1px solid rgba(155, 44, 44, 0.3);
+}
+
+.search-topbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.search-filter-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #bd00ff, #7000ff);
+    color: #fff;
+}
+
+.chips-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-bottom: 12px;
+}
+
+.chip {
+    border: none;
+    background: #242426;
+    color: #ddd;
+    font-size: 12px;
+    border-radius: 999px;
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+.chip.active {
+    background: #7f1dff;
+    color: #fff;
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.search-card {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #171719;
+    border: 1px solid #252527;
+}
+
+.search-card__img {
+    position: relative;
+    height: 104px;
+    background-size: cover;
+    background-position: center;
+}
+
+.search-card__img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+.search-card__price {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    z-index: 2;
+    border-radius: 999px;
+    background: rgba(168, 36, 255, 0.94);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+.search-card__body {
+    padding: 8px 10px 10px;
+}
+
+.search-card__body h4 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.search-card__body p {
+    margin: 0;
+    color: #989898;
+    font-size: 11px;
+}
+
+.messages-list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.messages-list-item__main { flex: 1; min-width: 0; }
+.messages-list-item__main h4 {
+    margin: 0 0 3px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.messages-list-item__main p {
+    margin: 0;
+    color: #ababab;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.messages-list-item__time {
+    font-size: 12px;
+    color: #8d8d8d;
+}
+
+.unread-badge {
+    margin-top: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ad21ff;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.chat-header span {
+    color: #8e8e8e;
+    font-size: 12px;
+}
+
+.chat-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.chat-bubble-wrap { display: flex; flex-direction: column; }
+.chat-bubble-wrap.mine { align-items: flex-end; }
+
+.chat-bubble {
+    max-width: 82%;
+    border-radius: 14px;
+    background: #1e1e20;
+    padding: 12px;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.chat-bubble.mine {
+    background: linear-gradient(145deg, #c000ff, #7d10ff);
+}
+
+.chat-time {
+    font-size: 12px;
+    color: #848484;
+    margin-top: 6px;
+}
+
+.chat-input-row {
+    position: sticky;
+    bottom: 78px;
+    background: #0b0b0b;
+    padding-top: 6px;
+    display: flex;
+    gap: 8px;
+}
+
+.chat-add-btn,
+.chat-send-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #262628;
+    color: #ddd;
+    font-size: 24px;
+}
+
+.chat-send-btn {
+    background: linear-gradient(145deg, #c000ff, #7d10ff);
+    color: #fff;
+    font-size: 20px;
+}
+
+.chat-input {
+    flex: 1;
+    border-radius: 999px;
+    border: 1px solid #262628;
+    background: #1e1e20;
+    color: #fff;
+    padding: 0 14px;
+    font-size: 14px;
+    outline: none;
+}
+
+.payment-balance-card {
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: linear-gradient(145deg, #be00ff, #6b00ff);
+    box-shadow: 0 14px 32px rgba(143, 29, 240, 0.25);
+}
+
+.payment-balance-card p {
+    margin: 0 0 6px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+}
+
+.payment-balance-card h2 {
+    margin: 0 0 14px;
+    font-size: 40px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.payment-balance-card button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.28);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.row-between h3 {
+    margin: 0;
+    font-size: 28px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.row-link {
+    border: none;
+    background: transparent;
+    color: #b146ff;
+    font-size: 14px;
+}
+
+.payment-method {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.payment-method h4 {
+    margin: 0 0 3px;
+    font-size: 15px;
+}
+
+.payment-method p {
+    margin: 0;
+    color: #959595;
+    font-size: 12px;
+}
+
+.payment-method__tag {
+    font-size: 11px;
+    border-radius: 999px;
+    padding: 4px 8px;
+    background: rgba(168, 36, 255, 0.2);
+    color: #d794ff;
+}
+
+.payment-actions {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.payment-actions button {
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid #39393b;
+    color: #eee;
+    background: #252527;
+}
+
+.wallet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.wallet-chip {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 12px;
+    text-align: center;
+    padding: 12px 8px;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.toggle-row {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.toggle-row p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.toggle-row span {
+    font-size: 12px;
+    color: #929292;
+}
+
+.toggle {
+    width: 44px;
+    height: 26px;
+    border-radius: 999px;
+    background: #4b4b50;
+    border: none;
+    position: relative;
+}
+
+.toggle::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.toggle.is-on {
+    background: #a824ff;
+}
+
+.toggle.is-on::after { left: 21px; }
+
+.profile-photo {
+    width: 110px;
+    height: 110px;
+    margin: 8px auto 6px;
+    border-radius: 50%;
+    background: #2b2b2d;
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+}
+
+.change-photo {
+    display: block;
+    margin: 0 auto 12px;
+    border: none;
+    background: transparent;
+    color: #c230ff;
+    font-size: 18px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.field-label {
+    margin: 14px 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.field-input {
+    width: 100%;
+    height: 48px;
+    border-radius: 14px;
+    border: 1px solid #2a2a2d;
+    background: #1b1b1d;
+    color: #fff;
+    padding: 0 14px;
+    font-size: 14px;
+}
+
+textarea.field-input {
+    min-height: 86px;
+    resize: none;
+    padding: 12px 14px;
+}
+
+.settings-group {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.settings-row {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #252527;
+    padding: 0 12px;
+    color: #f0f0f0;
+    font-size: 14px;
+}
+
+.settings-row:last-child { border-bottom: none; }
+
+.settings-row__left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-arrow { color: #777; }
+
+.logout-btn {
+    width: 100%;
+    margin-top: 12px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid rgba(130, 30, 40, 0.52);
+    background: rgba(94, 13, 20, 0.45);
+    color: #ffdbdb;
+    font-size: 15px;
+    font-weight: 600;
+}

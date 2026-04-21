@@ -1,0 +1,44 @@
+.frame-back-header {
+    padding: 14px 16px 8px;
+}
+
+.frame-back-header__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.frame-back-header__back {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    border: none;
+    background: rgba(255, 255, 255, 0.09);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.frame-back-header__title {
+    margin: 0;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.04em;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 0.9;
+    color: #f8f8f8;
+}
+
+.frame-back-header__chip {
+    margin-top: 10px;
+    border: none;
+    background: linear-gradient(90deg, #d227ff, #8f1df0);
+    color: #f3ddff;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+}
