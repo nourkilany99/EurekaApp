@@ -52,10 +52,11 @@ const VolunteerIcon = () => (
 const NAV_ITEMS = [
     {
         key: 'tasks',
-        to: '/requests',
+        to: '/tasks',
         label: 'Tasks',
         icon: <TasksIcon />,
         isActiveRoute: (pathname) =>
+            pathname.startsWith('/tasks') ||
             pathname.startsWith('/requests') ||
             pathname.startsWith('/jobs-on-maps') ||
             pathname.startsWith('/maps-open'),

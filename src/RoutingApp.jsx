@@ -29,6 +29,7 @@ import Chat from './pages/Chat';
 import PaymentSetup from './pages/PaymentSetup';
 import EditProfile from './pages/EditProfile';
 import Settings from './pages/Settings';
+import Tasks from './pages/Tasks';
 import BottomNav from './Components/BottomNav';
 
 const RoutingApp = () => {
@@ -60,6 +61,7 @@ const RoutingApp = () => {
                     <Route path="/reviews-ratings" element={<ReviewsRatings />} />
                     <Route path="/task-history" element={<TaskHistory />} />
                     <Route path="/search" element={<Search />} />
+                    <Route path="/tasks" element={<Tasks />} />
                     <Route path="/messages" element={<Messages />} />
                     <Route path="/chat" element={<Chat />} />
                     <Route path="/payment-setup" element={<PaymentSetup />} />

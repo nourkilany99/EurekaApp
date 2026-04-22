@@ -1,65 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
 
-.tasks-page {
+.tasks-screen {
     min-height: 100vh;
-    background-color: #000000;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    padding-bottom: 160px;
+    background: #141414;
+    color: #ffffff;
+    padding: 22px 16px 126px;
 }
 
-.tasks-page__content {
-    padding: 0 5% 24px;
-}
-
-.tasks-page__stats-row {
+.tasks-screen__header {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
-.tasks-page__section-title {
-    margin: 0 0 14px;
-    font-family: 'Bebas Neue', 'Impact', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    color: #fff;
-    line-height: 1.1;
+.tasks-screen__title {
+    margin: 0;
+    font-family: 'Luicy', sans-serif !important;
+    font-size: 34px;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: #ffffff;
 }
 
-.tasks-page__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+.tasks-screen__subtitle {
+    margin: 8px 0 0;
+    font-size: 11px;
+    line-height: 1.25;
+    color: #a5a5a5;
 }
 
-.tasks-page__footer-btn-wrap {
-    
-    width: 100%;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.tasks-page__explore-more.primary-button {
-    width: 90%;
+.tasks-screen__location-pill {
+    border: 0;
     border-radius: 999px;
-    padding: 14px 5%;
-    font-size: 15px;
-    font-weight: 700;
-    background: #a020f0;
-    border: none;
-    color: #fff;
-    box-shadow: 0 6px 24px rgba(160, 32, 240, 0.35);
+    padding: 7px 12px;
+    font-size: 10px;
+    line-height: 1;
+    color: #f0deff;
+    background: linear-gradient(135deg, #af3bff 0%, #7d26f2 100%);
+    box-shadow: 0 8px 20px rgba(125, 38, 242, 0.35);
+    white-space: nowrap;
 }
 
-.tasks-page .bottom-nav__inner {
-    background: #1f2937;
+.tasks-screen__search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+    border-radius: 999px;
+    background: #1b1b1b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0 12px;
 }
 
-.tasks-page .bottom-nav__item--active .bottom-nav__icon-wrap {
-    background: #a855f7;
-    box-shadow: 0 4px 14px rgba(168, 85, 247, 0.45);
+.tasks-screen__search-icon {
+    display: grid;
+    place-items: center;
+    color: #797979;
+}
+
+.tasks-screen__search-input {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #f2f2f2;
+    font-size: 11px;
+}
+
+.tasks-screen__search-input::placeholder {
+    color: #747474;
+}
+
+.tasks-screen__chips {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin: 12px 0 14px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.tasks-screen__chips::-webkit-scrollbar {
+    display: none;
+}
+
+.tasks-screen__chip {
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 999px;
+    height: 26px;
+    padding: 0 12px;
+    font-size: 10px;
+    color: #cacaca;
+    background: #252525;
+}
+
+.tasks-screen__chip.is-active {
+    background: #3a3a3a;
+    color: #ffffff;
+}
+
+.tasks-screen__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.tasks-screen__status {
+    padding: 16px 2px;
+    font-size: 12px;
+    color: #a2a2a2;
+}
+
+@media (min-width: 390px) {
+    .tasks-screen {
+        padding-inline: 18px;
+    }
 }

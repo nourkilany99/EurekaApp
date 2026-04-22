@@ -1,7 +1,7 @@
 import React from 'react';
 import './TaskCard.css';
 
-const TaskCard = ({ variant = 'recommended', title, subtitle, points, time, price, bgImage, status }) => {
+const TaskCard = ({ variant = 'recommended', title, subtitle, description, points, time, price, bgImage, image, status }) => {
     
     if (variant === 'ongoing') {
         return (
@@ -61,6 +61,30 @@ const TaskCard = ({ variant = 'recommended', title, subtitle, points, time, pric
                     {subtitle && <p className="tasks-grid-card__subtitle">{subtitle}</p>}
                 </div>
             </div>
+        );
+    }
+
+    if (variant === 'tasksPage') {
+        const cardImage = image || bgImage;
+
+        return (
+            <article className="task-card tasks-page-card">
+                <div className="tasks-page-card__gradient" />
+                {cardImage && (
+                    <div
+                        className="tasks-page-card__image"
+                        style={{ backgroundImage: `url(${cardImage})` }}
+                        role="img"
+                        aria-label={title || 'Task image'}
+                    />
+                )}
+                <div className="tasks-page-card__overlay" />
+                {price && <span className="tasks-page-card__badge">{price}$</span>}
+                <div className="tasks-page-card__content">
+                    <h3 className="tasks-page-card__title">{title}</h3>
+                    <p className="tasks-page-card__description">{description || subtitle}</p>
+                </div>
+            </article>
         );
     }
 
