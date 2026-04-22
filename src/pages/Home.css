@@ -20,7 +20,7 @@
 /* Header */
 .div1_home {
     width: 90%;
-    margin: 20px auto 10px;
+    margin: 5px auto 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -165,8 +165,17 @@
     overflow-x: auto;
     padding-bottom: 5px;
     scrollbar-width: none;
+    text-decoration: none;
+    color: white;
 }
-.calendar-scroll::-webkit-scrollbar { display: none; }
+
+.no-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+.calendar-scroll::-webkit-scrollbar { display: none; text-decoration: none;}
 .cal-day {
     width: 40px;
     height: 40px;
@@ -252,8 +261,11 @@
 .volunteer-icon .diamond {
     width: 40px;
     height: 40px;
-    background: conic-gradient(from 45deg, #ffde59 25%, #ff4747 25% 50%, #a824ff 50% 75%, #00d2ff 75%);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    /* background: conic-gradient(from 45deg, #ffde59 25%, #ff4747 25% 50%, #a824ff 50% 75%, #00d2ff 75%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+    background-image: url('../Assets/IMG/decor_volnter.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .vertical-list {
     display: flex;
@@ -278,8 +290,9 @@
     font-size: 20px;
 }
 .map-pin.p1 { top: 30%; left: 20%; color: #a824ff; }
-.map-pin.p2 { top: 50%; left: 45%; color: white; filter: grayscale(100%); }
-.map-pin.p3 { top: 60%; left: 70%; color: white; filter: grayscale(100%); }
+.map-pin.p2 { top: 50%; left: 45%; color: white;  }
+.map-pin.p3 { top: 60%; left: 70%; color: white; }
+    /* filter: grayscale(100%); } */
 .map-card {
     position: absolute;
     top: 25%;
@@ -292,6 +305,7 @@
     gap: 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 .map-card img {
     width: 24px;
     height: 24px;

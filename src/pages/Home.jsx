@@ -121,9 +121,11 @@ const Home = () => {
             {/* Header */}
             <div className='div1_home'>
                 <div className='div1_patch1'>
+                    <Link to="/profile" >
                     <div>
                         <img src={profileIMG} alt='Profile' className="profile-img" />
                     </div>
+                    </Link>
                     <div>
                         <p className="welcome-text">Welcome, Seif</p>
                         <div className="location-div">
@@ -160,22 +162,28 @@ const Home = () => {
 
                 {/* Calendar */}
                 <div className="section">
+            
                     <h2 className="section-title">CALENDAR <span className="section-subtitle">/(Track your tasks)</span></h2>
                     
+                    
                     <div className="calendar-scroll">
-                        {calendarDays.map((day) => (
-                            <div key={day} className={`cal-day ${day === 3 ? 'active' : ''}`}>{day}</div>
+                      {calendarDays.map((day) => (
+                       <Link to="/calender" key={day} className="no-link">
+                       <div className={`cal-day ${day === 3 ? 'active' : ''}`}>
+                       {day}
+                       </div>
+                       </Link>
                         ))}
                     </div>
                     <div className="cal-indicator-wrapper"><div className="cal-indicator"></div></div>
 
-                    <TaskCard 
+                    <Link className='no-link' to="/requests/details"><TaskCard 
                         variant="ongoing" 
                         title="Babysitting" 
                         subtitle="Nasr city, Hassan el ma'moon"
                         time="After 20 mins"
                         bgImage="https://images.unsplash.com/photo-1544716278-e513176f20b5?q=80&w=600&auto=format&fit=crop"
-                    />
+                    /></Link>
                 </div>
 
                 {/* Recommended */}
@@ -247,6 +255,7 @@ const Home = () => {
                             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=600&auto=format&fit=crop "  alt="" />
                             <span>23$</span>
                         </div>
+                        
                     </div>
                 </div>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { supabase } from '../Supabase';
 import TaskCard from '../Components/TaskCard';
 import './Tasks.css';
+import MobileTool from '../Components/MobileTool';
 
 const FALLBACK_CAT_IMAGE =
     'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop';
@@ -90,7 +91,10 @@ const Tasks = () => {
     }, [activeCategory, searchText, tasks]);
 
     return (
+        <>
+        <MobileTool />
         <main className="tasks-screen">
+            
             <header className="tasks-screen__header">
                 <div>
                     <h1 className="tasks-screen__title">TASKS</h1>
@@ -154,6 +158,7 @@ const Tasks = () => {
                 </section>
             )}
         </main>
+        </>
     );
 };
 

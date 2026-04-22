@@ -1,5 +1,6 @@
 import React from 'react';
 import './TaskCard.css';
+import { Link } from "react-router-dom";
 
 const TaskCard = ({ variant = 'recommended', title, subtitle, description, points, time, price, bgImage, image, status }) => {
     
@@ -89,7 +90,8 @@ const TaskCard = ({ variant = 'recommended', title, subtitle, description, point
     }
 
     // Default: recommended
-    return (
+    return (<>
+    <Link className='no-link' to="/apply-for-the-task">
         <div className="task-card recommended-card" style={bgImage ? { backgroundImage: `url(${bgImage})` } : {}}>
             <div className="recommended-overlay"></div>
             <div className="recommended-top">
@@ -112,6 +114,7 @@ const TaskCard = ({ variant = 'recommended', title, subtitle, description, point
                  <p className="recommended-subtitle">{subtitle}</p>
             </div>
         </div>
+    </Link></>
     );
 };
 
