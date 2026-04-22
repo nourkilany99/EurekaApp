@@ -52,15 +52,18 @@ const MyTasksPage = () => (
         <MobileTool />
         <div className="tasks-page__content">
             <MyTasksHeader />
-            <OngoingWideTaskCard
-                imageUrl={ongoingImg}
-                location="Nasr city, Hassan el ma'moon"
-            />
             <div className="tasks-page__stats-row">
                 <StatPillCard value="22" label="Done tasks" />
                 <StatPillCard value="4" label="Pending requests" />
             </div>
-            <h2 className="tasks-page__section-title">AVAILABLE TASKS</h2>
+            <TaskCard 
+                        variant="ongoing" 
+                        title="Babysitting" 
+                        subtitle="Nasr city, Hassan el ma'moon"
+                        time="After 20 mins"
+                        bgImage="https://images.unsplash.com/photo-1544716278-e513176f20b5?q=80&w=600&auto=format&fit=crop"
+            />
+            <h2 className="tasks-page__section-title">Available tasks</h2>
             <CategoryFilterRow chipItems={myTasksFilterChips} />
             <div className="tasks-page__grid">
                 {tasks.map((t) => (
