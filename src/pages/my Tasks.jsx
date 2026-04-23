@@ -6,7 +6,7 @@ import StatPillCard from '../Components/StatPillCard';
 import CategoryFilterRow from '../Components/CategoryFilterRow';
 import TaskCard from '../Components/TaskCard';
 import PrimaryButton from '../Components/PrimaryButton';
-import './Tasks.css';
+import './MyTasksPage.css';
 
 const catImg =
     'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600&auto=format&fit=crop';
@@ -48,24 +48,26 @@ const tasks = [
 ];
 
 const MyTasksPage = () => (
-    <div className="tasks-page">
+    <div className="my-tasks-page">
         <MobileTool />
-        <div className="tasks-page__content">
+        <div className="my-tasks-page__content">
             <MyTasksHeader />
-            <div className="tasks-page__stats-row">
+
+            <OngoingWideTaskCard
+                status="Ongoing task"
+                title="Babysitting"
+                location="Nasr city, Hassan el ma'moon"
+                imageUrl={ongoingImg}
+            />
+
+            <div className="my-tasks-page__stats-row">
                 <StatPillCard value="22" label="Done tasks" />
                 <StatPillCard value="4" label="Pending requests" />
             </div>
-            <TaskCard 
-                        variant="ongoing" 
-                        title="Babysitting" 
-                        subtitle="Nasr city, Hassan el ma'moon"
-                        time="After 20 mins"
-                        bgImage="https://images.unsplash.com/photo-1544716278-e513176f20b5?q=80&w=600&auto=format&fit=crop"
-            />
-            <h2 className="tasks-page__section-title">Available tasks</h2>
+
+            <h2 className="my-tasks-page__section-title">AVAILABLE TASKS</h2>
             <CategoryFilterRow chipItems={myTasksFilterChips} />
-            <div className="tasks-page__grid">
+            <div className="my-tasks-page__grid">
                 {tasks.map((t) => (
                     <TaskCard
                         key={t.id}
@@ -78,8 +80,8 @@ const MyTasksPage = () => (
                 ))}
             </div>
         </div>
-        <div className="tasks-page__footer-btn-wrap">
-            <PrimaryButton type="button" className="tasks-page__explore-more">
+        <div className="my-tasks-page__footer-btn-wrap">
+            <PrimaryButton type="button" className="my-tasks-page__explore-more">
                 Explore more
             </PrimaryButton>
         </div>

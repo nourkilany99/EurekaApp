@@ -20,10 +20,10 @@
 }
 
 .learn-more-page__progress-card {
-    margin: 10px 16px 0;
+    margin: 15px 16px 0;
     border-radius: 8px;
-    padding: 10px;
-    background: linear-gradient(135deg, #5b1c77 0%, #3d144f 45%, #2a1038 100%);
+    padding: 25px;
+    background: linear-gradient(135deg, #2C5E49 0%, #265b45 45%, #16563a 100%);
 }
 
 .learn-more-page__progress-row {
@@ -49,17 +49,18 @@
 }
 
 .learn-more-page__copy {
-    margin: 14px 16px 0;
-    font-size: 11px;
+    margin: 35px 16px 0;
+    font-size: 14px;
     line-height: 1.35;
     color: rgba(255, 255, 255, 0.72);
+    font-family: reg;
 }
 
 .learn-more-page__links {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 136px;
+    bottom: 276px;
     display: grid;
     justify-items: center;
     gap: 2px;
@@ -116,4 +117,16 @@
     font-size: 26px;
     letter-spacing: 0.12em;
     font-weight: 700;
+}
+
+.under_review_div{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.under_review{
+    width: 100%;
 }

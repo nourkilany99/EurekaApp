@@ -1,6 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { supabase } from '../Supabase';
-import TaskCard from '../Components/TaskCard';
 import './Tasks.css';
 import MobileTool from '../Components/MobileTool';
 
@@ -49,6 +48,8 @@ const Tasks = () => {
     const [loading, setLoading] = useState(true);
     const [searchText, setSearchText] = useState('');
     const [activeCategory, setActiveCategory] = useState('All');
+    const [isSearchOverlayOpen, setIsSearchOverlayOpen] = useState(false);
+    const overlayInputRef = useRef(null);
 
     useEffect(() => {
         const fetchTasks = async () => {
@@ -90,6 +91,19 @@ const Tasks = () => {
         });
     }, [activeCategory, searchText, tasks]);
 
+    const getTaskMeta = (task, index) => ({
+        location: task.category === 'Moving Help' ? 'Brooklyn Heights' : task.category === 'Babysitting' ? 'Queens, NY' : 'Upper West Side, NY',
+        duration: ['2 hours', '1.5 hours', '3 hours', '45 mins'][index % 4],
+        tag: task.category === 'Babysitting' ? 'Urgent' : task.category === 'Moving Help' ? 'Easy' : 'Hot',
+        assignee: ['Sarah M.', 'John K.', 'Emily R.', 'Mia L.'][index % 4],
+        avatar: ['S', 'J', 'E', 'M'][index % 4],
+    });
+
+    useEffect(() => {
+        if (!isSearchOverlayOpen) return;
+        overlayInputRef.current?.focus();
+    }, [isSearchOverlayOpen]);
+
     return (
         <>
         <MobileTool />
@@ -104,21 +118,35 @@ const Tasks = () => {
                     Nasr city, Home
                 </button>
             </header>
-
-            <div className="tasks-screen__search-wrap">
-                <span className="tasks-screen__search-icon" aria-hidden>
+            
+            <div className="tasks-screen__search-row">
+                <button type="button" className="tasks-screen__filter-btn" aria-label="Filter tasks">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
-                        <circle cx="11" cy="11" r="6.2" stroke="currentColor" strokeWidth="1.8" />
-                        <path d="M16 16l4.4 4.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                        <path d="M3 5h18l-7 8v5l-4 2v-7L3 5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
                     </svg>
-                </span>
-                <input
-                    type="text"
-                    className="tasks-screen__search-input"
-                    placeholder="Makeup work"
-                    value={searchText}
-                    onChange={(event) => setSearchText(event.target.value)}
-                />
+                </button>
+                <button
+                    type="button"
+                    className="tasks-screen__search-wrap tasks-screen__search-trigger"
+                    onClick={() => setIsSearchOverlayOpen(true)}
+                    aria-label="Open search overlay"
+                >
+                    <span className="tasks-screen__search-icon" aria-hidden>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
+                            <circle cx="11" cy="11" r="6.2" stroke="currentColor" strokeWidth="1.8" />
+                            <path d="M16 16l4.4 4.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                        </svg>
+                    </span>
+                    <input
+                        type="text"
+                        className="tasks-screen__search-input"
+                        placeholder="Makeup work"
+                        value={searchText}
+                        onChange={(event) => setSearchText(event.target.value)}
+                        readOnly
+                        tabIndex={-1}
+                    />
+                </button>
             </div>
 
             <div className="tasks-screen__chips" role="tablist" aria-label="Task categories">
@@ -144,19 +172,82 @@ const Tasks = () => {
             ) : filteredTasks.length === 0 ? (
                 <p className="tasks-screen__status">No tasks found.</p>
             ) : (
-                <section className="tasks-screen__grid" aria-label="Available tasks">
-                    {filteredTasks.map((task) => (
-                        <TaskCard
-                            key={task.id}
-                            variant="tasksPage"
-                            title={task.title}
-                            description={task.description}
-                            price={task.price}
-                            image={task.image_url || FALLBACK_CAT_IMAGE}
-                        />
-                    ))}
-                </section>
+                <>
+                    <section className="tasks-screen__matched">
+                        <h2>You&apos;re Matched!</h2>
+                        <button type="button">View task</button>
+                    </section>
+
+                    <section className="tasks-screen__list" aria-label="Available tasks">
+                        {filteredTasks.map((task, index) => {
+                            const meta = getTaskMeta(task, index);
+
+                            return (
+                                <article key={task.id} className="tasks-list-card">
+                                    <div className="tasks-list-card__media" style={{ backgroundImage: `url(${task.image_url || FALLBACK_CAT_IMAGE})` }}>
+                                        <span className={`tasks-list-card__tag is-${meta.tag.toLowerCase().replace(/\s+/g, '-')}`}>{meta.tag}</span>
+                                    </div>
+                                    <div className="tasks-list-card__body">
+                                        <h3 className="tasks-list-card__title">{task.title}</h3>
+                                        <div className="tasks-list-card__meta-line">
+                                            <span>◉ {meta.location}</span>
+                                        </div>
+                                        <div className="tasks-list-card__meta-line">
+                                            <span>◷ {meta.duration}</span>
+                                        </div>
+                                        <div className="tasks-list-card__footer">
+                                            <div className="tasks-list-card__person">
+                                                <span className="tasks-list-card__avatar">{meta.avatar}</span>
+                                                <span>{meta.assignee}</span>
+                                            </div>
+                                            <span className="tasks-list-card__price">$ {task.price}</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            );
+                        })}
+                    </section>
+                </>
             )}
+
+            <div
+                className={`tasks-search-overlay ${isSearchOverlayOpen ? 'is-open' : ''}`}
+                onClick={() => setIsSearchOverlayOpen(false)}
+                aria-hidden={!isSearchOverlayOpen}
+            >
+                <div
+                    className="tasks-search-overlay__panel"
+                    onClick={(event) => event.stopPropagation()}
+                >
+                    <button
+                        type="button"
+                        className="tasks-search-overlay__close"
+                        onClick={() => setIsSearchOverlayOpen(false)}
+                        aria-label="Close search"
+                    >
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                            <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                    </button>
+
+                    <div className="tasks-search-overlay__input-wrap">
+                        <span className="tasks-screen__search-icon" aria-hidden>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
+                                <circle cx="11" cy="11" r="6.2" stroke="currentColor" strokeWidth="1.8" />
+                                <path d="M16 16l4.4 4.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                            </svg>
+                        </span>
+                        <input
+                            ref={overlayInputRef}
+                            type="text"
+                            className="tasks-screen__search-input"
+                            placeholder="Makeup work"
+                            value={searchText}
+                            onChange={(event) => setSearchText(event.target.value)}
+                        />
+                    </div>
+                </div>
+            </div>
         </main>
         </>
     );

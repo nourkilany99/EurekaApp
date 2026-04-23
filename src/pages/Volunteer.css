@@ -1,27 +1,250 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+@font-face {
+    font-family: luicy;
+    src: url(../fonts/Luicy-Regular\ Demo.ttf);
+}
+
+@font-face {
+    font-family: reg;
+    src: url(../fonts/AlbertSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: decor;
+    src: url(../fonts/MeaCulpa-Regular.ttf);
+}
 
 .vol-page {
     min-height: 100vh;
-    background: #0b0b0b;
+    background: #141414;
     color: #fff;
     font-family: 'Inter', sans-serif;
     padding-bottom: 110px;
 }
 
 .vol-page__content {
-    padding: 18px 5% 24px;
+    padding: 22px 16px 28px;
+}
+
+.vol-page__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
 }
 
 .vol-page__title {
-    margin: 8px 0 16px;
-    font-family: 'Bebas Neue', 'Impact', sans-serif;
-    letter-spacing: 0.08em;
-    font-weight: 400;
-    font-size: 30px;
+    margin: 0;
+    font-family: 'Luicy', sans-serif !important;
+    font-size: 34px;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    -webkit-text-stroke: 1px #141414;
+}
+
+.vol-page__coins {
+    border-radius: 999px;
+    background: #222;
+    color: #ededed;
+    font-size: 13px;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.vol-page__coins::before {
+    content: '●';
+    color: #f3c117;
+    font-size: 10px;
+    margin-right: 6px;
+}
+
+.vol-page__heart {
+    margin-top: 16px;
+    text-align: center;
+    color: #b52bff;
+    font-size: 16px;
+    width: 100%;
+}
+
+.vol-page__news{
+    width: 55%;
+}
+
+.vol-page__mission {
+    margin: 6px 0 6px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 0.92;
+    font-family: reg;
+    
+
+    
+}
+
+.vol-page__subtitle {
+    margin: 0 0 25px;
+    text-align: center;
+    color: #a4a4a4;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.vol-page__categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.vol-cat {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background: #1d1d1d;
+    color: #efefef;
+    height: 64px;
+    font-size: 11px;
+    display: grid;
+    place-items: center;
+    gap: 4px;
+}
+
+.vol-cat span {
+    font-size: 16px;
+}
+
+.vol-page__section-title {
+    margin: 10% 0 3% 0;
+    font-size: 2.2vw;
+    color: #ffffff;
+    -webkit-text-stroke: 1px #141414;
 }
 
 .vol-page__list {
     display: grid;
-    gap: 10px;
+    gap: 12px;
 }
 
+.vol-card {
+    border-radius: 20px;
+    overflow: hidden;
+    background: #1b1b1b;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.vol-card:active {
+    transform: translateY(1px) scale(0.995);
+}
+
+.vol-card__media {
+    height: 124px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.vol-card__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 30%, rgba(0, 0, 0, 0.64) 100%);
+}
+
+.vol-card__points {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 600;
+    color: #121212;
+    background: #f7d65d;
+    border-radius: 999px;
+    padding: 4px 10px;
+}
+
+.vol-card__verified {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    font-size: 10px;
+    color: #cde7ff;
+    background: rgba(91, 138, 255, 0.22);
+    border: 1px solid rgba(140, 176, 255, 0.4);
+    border-radius: 999px;
+    padding: 4px 8px;
+}
+
+.vol-card__body {
+    padding: 14px;
+}
+
+.vol-card__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: reg;
+}
+
+.vol-card__description {
+    margin: 8px 0 10px;
+    color: #b9b9b9;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.vol-card__meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: #989898;
+    font-size: 11px;
+}
+
+.vol-card__meta span {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #252525;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.vol-card__cta {
+    border: 0;
+    border-radius: 999px;
+    height: 34px;
+    min-width: 88px;
+    padding: 0 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #f6e8ff;
+    background: linear-gradient(135deg, #af3bff 0%, #7d26f2 100%);
+    box-shadow: 0 8px 20px rgba(125, 38, 242, 0.35);
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.vol-card__cta:active {
+    transform: translateY(1px);
+    filter: brightness(0.95);
+}
+
+.vol-card__footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.vol-card__impact {
+    color: #bb5aff;
+    font-size: 11px;
+}
+
+@media (min-width: 390px) {
+    .vol-page__content {
+        padding-inline: 18px;
+    }
+}

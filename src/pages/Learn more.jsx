@@ -1,5 +1,8 @@
 import React from 'react';
 import MobileTool from '../Components/MobileTool';
+import PageHeaderBack from '../Components/PageHeaderBack';
+import under_review from '../Assets/IMG/under_review.svg';
+
 import FrameBackHeader from '../Components/FrameBackHeader';
 import './Learn more.css';
 
@@ -7,7 +10,8 @@ const LearnMore = () => (
     <div className="learn-more-page">
         <MobileTool />
         <div className="learn-more-page__screen">
-            <FrameBackHeader title="ACCOUNT UNDER REVIEW" />
+        <PageHeaderBack title={<> ACCOUNT <br/> UNDER REVIEW</>}  />
+            {/* <FrameBackHeader title="ACCOUNT UNDER REVIEW" /> */}
 
             <section className="learn-more-page__progress-card">
                 <div className="learn-more-page__progress-row">
@@ -32,9 +36,13 @@ const LearnMore = () => (
                 <button type="button">Learn about Safety</button>
             </div>
 
-            <div className="learn-more-page__artwork" aria-hidden>
+            {/* <div className="learn-more-page__artwork" aria-hidden>
                 <div className="learn-more-page__rainbow" />
                 <div className="learn-more-page__badge">$ $</div>
+            </div> */}
+            
+            <div className='under_review_div'>
+            <img src={under_review} alt='' className='under_review' />
             </div>
         </div>
     </div>

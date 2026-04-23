@@ -3,7 +3,7 @@ import './WalletSecurityNotice.css';
 
 const WalletSecurityNotice = () => (
     <section className="wallet-security-notice">
-        <h3 className="wallet-security-notice__title">Payment Security Notice</h3>
+        <h3 className="wallet-security-notice__title">Payment<br/>Security Notice</h3>
         <div className="wallet-security-notice__box">
             <p className="wallet-security-notice__text">
                 All payments are processed through a secure <strong>escrow system</strong>, meaning funds

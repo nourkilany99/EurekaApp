@@ -315,7 +315,7 @@ const Home = () => {
 
                 {/* Recommended */}
                 <div className="section mt-4">
-                    <h2 className="section-title main-title">RECOMMENDED<br/><span className="script-title">tasks for you</span></h2>
+                    <h2 className="section-title main-title">RECOMMENDED<br/>Tasks<br/><span className="script-title">for you</span></h2>
                     <div className="filters">
                         {recommendedFilters.map((filter) => (
                             <button
