@@ -12,7 +12,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #7c3aed;
+    background: #2C5E49;
     color: #fff;
     font-size: 16px;
     font-weight: 800;
@@ -23,7 +23,7 @@
 }
 
 .notification-card__avatar--referral {
-    background: #3b0764;
+    background: #1F4334;
 }
 
 .notification-card__main {

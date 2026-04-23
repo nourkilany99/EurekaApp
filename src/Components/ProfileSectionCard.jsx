@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProfileSectionCard.css';
+import { Link } from 'react-router-dom';
 
 const PencilIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -18,9 +19,11 @@ const ProfileSectionCard = ({ pill, children, onEdit, showEdit = true }) => (
         <div className="profile-section-card__head">
             <span className="profile-section-card__pill">{pill}</span>
             {showEdit ? (
+                <Link to="/edit-profile">
                 <button type="button" className="profile-section-card__edit" onClick={onEdit} aria-label="Edit">
                     <PencilIcon />
                 </button>
+                </Link>
             ) : (
                 <span className="profile-section-card__edit-spacer" aria-hidden />
             )}

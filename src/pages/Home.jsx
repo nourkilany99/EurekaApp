@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import MobileTool from '../Components/MobileTool';
 import location from '../Assets/IMG/location.svg';
@@ -7,9 +7,59 @@ import Wallet from '../Assets/IMG/Wallet.svg';
 import notification from '../Assets/IMG/notific.svg';
 import TaskCard from '../Components/TaskCard';
 import maps from '../Assets/IMG/maps_code.svg'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
+    const containerRef = useRef(null);
+    const rafRef = useRef(0);
+    const startXRef = useRef(0);
+    const startYRef = useRef(0);
+    const lastXRef = useRef(0);
+    const lastYRef = useRef(0);
+    const startTimeRef = useRef(0);
+    const isHorizontalRef = useRef(false);
+    const isTrackingRef = useRef(false);
+
+    const applyTransform = (x) => {
+        const el = containerRef.current;
+        if (!el) return;
+        el.style.transform = `translateX(${x}px)`;
+    };
+
+    const applyTransformValue = (value) => {
+        const el = containerRef.current;
+        if (!el) return;
+        el.style.transform = value;
+    };
+
+    const setTransition = (transition) => {
+        const el = containerRef.current;
+        if (!el) return;
+        el.style.transition = transition;
+    };
+
+    const clamp = (min, val, max) => Math.max(min, Math.min(val, max));
+
+    const computeDurationSeconds = (velocityPxPerMs) => {
+        const v = Math.max(0, velocityPxPerMs);
+        const vMin = 0.5;
+        const vMax = 2.0;
+        const normalized = clamp(0, (Math.min(v, vMax) - vMin) / (vMax - vMin), 1);
+        const duration = 0.35 - (0.2 * normalized);
+        return clamp(0.15, duration, 0.35);
+    };
+
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+        el.style.transform = 'translateX(0px)';
+        el.style.transition = '';
+        return () => {
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        };
+    }, []);
+
     const calendarDays = [1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12,13,14,15,16];
 
     const recommendedFilters = [
@@ -114,8 +164,85 @@ const Home = () => {
         },
     ];
 
+    const onTouchStart = (e) => {
+        const t = e.touches && e.touches[0];
+        if (!t) return;
+        isTrackingRef.current = true;
+        isHorizontalRef.current = false;
+        startXRef.current = t.clientX;
+        startYRef.current = t.clientY;
+        lastXRef.current = t.clientX;
+        lastYRef.current = t.clientY;
+        startTimeRef.current = Date.now();
+        setTransition('none');
+    };
+
+    const onTouchMove = (e) => {
+        if (!isTrackingRef.current) return;
+        const t = e.touches && e.touches[0];
+        if (!t) return;
+        lastXRef.current = t.clientX;
+        lastYRef.current = t.clientY;
+
+        const dx = t.clientX - startXRef.current;
+        const dy = t.clientY - startYRef.current;
+
+        if (!isHorizontalRef.current) {
+            if (Math.abs(dx) <= Math.abs(dy)) return;
+            isHorizontalRef.current = true;
+        }
+
+        const clampedDx = Math.min(0, dx);
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        rafRef.current = requestAnimationFrame(() => {
+            applyTransform(clampedDx);
+        });
+    };
+
+    const onTouchEnd = () => {
+        if (!isTrackingRef.current) return;
+        isTrackingRef.current = false;
+
+        if (!isHorizontalRef.current) return;
+
+        const endTime = Date.now();
+        const timeElapsed = Math.max(1, endTime - startTimeRef.current);
+        const startX = startXRef.current;
+        const endX = lastXRef.current;
+        const distance = startX - endX;
+        const velocity = distance / timeElapsed;
+
+        const shouldTrigger = distance > 80 || velocity > 0.5;
+
+        if (shouldTrigger) {
+            const duration = computeDurationSeconds(velocity);
+            setTransition(`transform ${duration}s cubic-bezier(0.22, 1, 0.36, 1)`);
+            applyTransformValue('translateX(-100%)');
+
+            const el = containerRef.current;
+            if (!el) return;
+            const onDone = (evt) => {
+                if (evt.propertyName !== 'transform') return;
+                el.removeEventListener('transitionend', onDone);
+                navigate('/chat');
+            };
+            el.addEventListener('transitionend', onDone);
+            return;
+        }
+
+        setTransition('transform 0.25s cubic-bezier(0.25, 1.5, 0.5, 1)');
+        applyTransform(0);
+    };
+
     return ( 
-        <div className="home-container">
+        <div
+            className="home-container"
+            ref={containerRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            onTouchCancel={onTouchEnd}
+        >
             <MobileTool />
 
             {/* Header */}

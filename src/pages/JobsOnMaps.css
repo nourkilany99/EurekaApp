@@ -35,8 +35,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(157, 39, 245, 0.15);
-    border: 1px solid rgba(157, 39, 245, 0.3);
+    background: rgba(44, 94, 73, 0.15);
+    border: 1px solid rgba(44, 94, 73, 0.3);
     color: #fff;
     padding: 8px 12px;
     border-radius: 999px;
@@ -91,7 +91,7 @@
 }
 
 .jom-pin--active {
-    background: #ff4dff;
+    background: #2C5E49;
 }
 
 .jom-sheet {
@@ -120,7 +120,7 @@
 .jom-sheet__inner {
     border-radius: 22px;
     padding: 16px 16px 18px;
-    background: radial-gradient(120% 140% at 20% 0%, rgba(157, 39, 245, 0.55), rgba(18, 18, 18, 0.85) 55%, rgba(18, 18, 18, 0.9));
+    background: radial-gradient(120% 140% at 20% 0%, rgba(44, 94, 73, 0.55), rgba(18, 18, 18, 0.85) 55%, rgba(18, 18, 18, 0.9));
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 16px 60px rgba(0, 0, 0, 0.6);
 }
@@ -171,7 +171,7 @@
     font-size: 14px;
     color: #fff;
     cursor: pointer;
-    background: linear-gradient(90deg, #9d27f5, #c084fc);
-    box-shadow: 0 10px 30px rgba(157, 39, 245, 0.35);
+    background: linear-gradient(90deg, #2C5E49, rgba(44, 94, 73, 0.28));
+    box-shadow: 0 10px 30px rgba(44, 94, 73, 0.35);
 }
 

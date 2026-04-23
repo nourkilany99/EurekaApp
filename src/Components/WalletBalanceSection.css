@@ -32,8 +32,8 @@
 }
 
 .wallet-balance-section__card--earned {
-    background: #7c13d4;
-    background: linear-gradient(135deg, #9d27f5 0%, #6b21a8 100%);
+    background: #2C5E49;
+    background: linear-gradient(135deg, #2C5E49 0%, #1F4334 100%);
 }
 
 .wallet-balance-section__card--pending {

@@ -51,8 +51,8 @@
     border-radius: 999px;
     font-size: 10px;
     font-weight: 700;
-    background: rgba(53, 21, 73, 0.86);
-    color: #eed3ff;
+    background: rgba(31, 67, 52, 0.86);
+    color: rgba(255, 255, 255, 0.92);
 }
 
 .maps-open__pin {
@@ -83,8 +83,8 @@
 }
 
 .maps-open__pin--purple {
-    background: #ab20ff;
-    color: #ab20ff;
+    background: #2C5E49;
+    color: #2C5E49;
 }
 
 .maps-open__pin--red {
@@ -107,7 +107,7 @@
     margin: 8px 16px 0;
     border-radius: 26px 26px 0 0;
     padding: 16px 14px 12px;
-    background: radial-gradient(140% 160% at 0% 0%, #432062 0%, #2c133f 40%, #19131f 100%);
+    background: radial-gradient(140% 160% at 0% 0%, #2C5E49 0%, #1F4334 40%, #0b0b0b 100%);
     transform: translateY(78%);
     transition: transform 280ms ease;
 }
@@ -163,7 +163,7 @@
     border: none;
     border-radius: 7px;
     padding: 9px 12px;
-    background: linear-gradient(90deg, #a415f6, #cb2ff4);
+    background: linear-gradient(90deg, #2C5E49, #1F4334);
     color: #fff;
     font-weight: 700;
     font-size: 13px;

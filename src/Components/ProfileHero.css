@@ -3,7 +3,7 @@
     padding: 24px 5% 32px;
     margin: 0 -5% 20px;
     text-align: center;
-    background: radial-gradient(ellipse 120% 100% at 50% 0%, #4c1d95 0%, rgba(76, 29, 149, 0.45) 45%, transparent 72%);
+    background: radial-gradient(ellipse 120% 100% at 50% 0%, #1F4334 0%, rgba(31, 67, 52, 0.45) 45%, transparent 72%);
     border-radius: 0 0 50% 50% / 0 0 28px 28px;
     min-height: 120px;
 }

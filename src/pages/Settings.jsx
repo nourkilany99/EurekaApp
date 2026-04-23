@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import MobileTool from '../Components/MobileTool';
 import PageHeaderBack from '../Components/PageHeaderBack';
 import './UtilityPages.css';
@@ -39,36 +40,44 @@ const settingGroups = [
     },
 ];
 
-const Settings = () => (
-    <div className="utility-page">
-        <MobileTool />
-        <div className="utility-page__inner">
-            <PageHeaderBack title="SETTINGS" />
+const Settings = () => {
+    const navigate = useNavigate();
 
-            {settingGroups.map((group) => (
-                <section key={group.title}>
-                    <h3 className="utility-section-title">{group.title}</h3>
-                    <div className="settings-group">
-                        {group.rows.map((row) => (
-                            <div className="settings-row" key={row.label}>
-                                <div className="settings-row__left">
-                                    <span>{row.icon}</span>
-                                    <span>{row.label}</span>
+    return (
+        <div className="utility-page">
+            <MobileTool />
+            <div className="utility-page__inner">
+                <PageHeaderBack title="SETTINGS" />
+
+                {settingGroups.map((group) => (
+                    <section key={group.title}>
+                        <h3 className="utility-section-title">{group.title}</h3>
+                        <div className="settings-group">
+                            {group.rows.map((row) => (
+                                <div
+                                    className="settings-row"
+                                    key={row.label}
+                                    onClick={row.label === 'Payment Methods' ? () => navigate('/payment-setup') : undefined}
+                                >
+                                    <div className="settings-row__left">
+                                        <span>{row.icon}</span>
+                                        <span>{row.label}</span>
+                                    </div>
+                                    {row.toggle ? (
+                                        <button type="button" className="toggle is-on" aria-label={`${row.label} enabled`} />
+                                    ) : (
+                                        <span className="settings-arrow">{row.right || '›'}</span>
+                                    )}
                                 </div>
-                                {row.toggle ? (
-                                    <button type="button" className="toggle is-on" aria-label={`${row.label} enabled`} />
-                                ) : (
-                                    <span className="settings-arrow">{row.right || '›'}</span>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            ))}
+                            ))}
+                        </div>
+                    </section>
+                ))}
 
-            <button type="button" className="logout-btn">Log Out</button>
+                <button type="button" className="logout-btn">Log Out</button>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default Settings;

@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProfileHero.css';
+import { Link } from 'react-router-dom';
 
 const GearIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -20,10 +21,13 @@ const GearIcon = () => (
 );
 
 const ProfileHero = ({ onSettings }) => (
+    
     <div className="profile-hero">
+        <Link to='/settings'>
         <button type="button" className="profile-hero__settings" onClick={onSettings} aria-label="Settings">
             <GearIcon />
         </button>
+        </Link>
         <h1 className="profile-hero__title">YOUR PROFILE</h1>
     </div>
 );
