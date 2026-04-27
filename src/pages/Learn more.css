@@ -45,7 +45,7 @@
     width: 74%;
     height: 100%;
     border-radius: 999px;
-    background: #7c229f;
+    background: #2c5e495b;
 }
 
 .learn-more-page__copy {
@@ -89,18 +89,6 @@
     pointer-events: none;
 }
 
-.learn-more-page__rainbow {
-    position: absolute;
-    left: -54px;
-    bottom: -36px;
-    width: 300px;
-    height: 220px;
-    border-radius: 48% 52% 52% 48%;
-    background:
-        radial-gradient(circle at 35% 62%, transparent 35px, #f18f01 38px 50px, #ef6f00 50px 62px, #e34032 62px 74px, #b226d6 74px 86px, transparent 86px),
-        radial-gradient(circle at 55% 70%, #1f9d6a 0 30px, #ffffff 31px 34px, #255b45 35px 46px, transparent 47px),
-        radial-gradient(circle at 68% 72%, #1f9d6a 0 36px, #ffffff 37px 40px, #255b45 41px 56px, transparent 57px);
-}
 
 .learn-more-page__badge {
     position: absolute;

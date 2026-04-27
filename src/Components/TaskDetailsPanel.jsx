@@ -27,7 +27,7 @@ const TaskDetailsPanel = ({
         <div className="task-details-panel__img-wrap">
             <img src={imageUrl} alt="" className="task-details-panel__img" />
         </div>
-        <h2 className="task-details-panel__title">{title}</h2>
+        <p className="task-details-panel__title">{title}</p>
         <p className="task-details-panel__desc">{description}</p>
         <div className="task-details-panel__divider" />
         <div className="task-details-panel__price-row">

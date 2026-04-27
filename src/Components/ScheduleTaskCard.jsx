@@ -24,7 +24,7 @@ const ScheduleTaskCard = ({ title, location, accent = 'purple' }) => (
     <article className={`schedule-task-card schedule-task-card--${accent}`}>
         <div className="schedule-task-card__strip" aria-hidden />
         <div className="schedule-task-card__content">
-            <h3 className="schedule-task-card__title">{title}</h3>
+            <p className="schedule-task-card__title">{title}</p>
             <p className="schedule-task-card__loc">
                 <PinIcon /> {location}
             </p>
