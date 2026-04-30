@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { supabase } from '../Supabase';
 import './Tasks.css';
-import MobileTool from '../Components/MobileTool';
+import MobileTool from '../components/MobileTool';
+import GlobalSearchInput from '../components/GlobalSearchInput';
 
 const FALLBACK_CAT_IMAGE =
     'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop';
@@ -48,8 +49,6 @@ const Tasks = () => {
     const [loading, setLoading] = useState(true);
     const [searchText, setSearchText] = useState('');
     const [activeCategory, setActiveCategory] = useState('All');
-    const [isSearchOverlayOpen, setIsSearchOverlayOpen] = useState(false);
-    const overlayInputRef = useRef(null);
 
     useEffect(() => {
         const fetchTasks = async () => {
@@ -99,10 +98,7 @@ const Tasks = () => {
         avatar: ['S', 'J', 'E', 'M'][index % 4],
     });
 
-    useEffect(() => {
-        if (!isSearchOverlayOpen) return;
-        overlayInputRef.current?.focus();
-    }, [isSearchOverlayOpen]);
+
 
     return (
         <>
@@ -125,28 +121,20 @@ const Tasks = () => {
                         <path d="M3 5h18l-7 8v5l-4 2v-7L3 5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
                     </svg>
                 </button>
-                <button
-                    type="button"
-                    className="tasks-screen__search-wrap tasks-screen__search-trigger"
-                    onClick={() => setIsSearchOverlayOpen(true)}
-                    aria-label="Open search overlay"
-                >
+                <div className="tasks-screen__search-wrap">
                     <span className="tasks-screen__search-icon" aria-hidden>
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
                             <circle cx="11" cy="11" r="6.2" stroke="currentColor" strokeWidth="1.8" />
                             <path d="M16 16l4.4 4.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                         </svg>
                     </span>
-                    <input
-                        type="text"
+                    <GlobalSearchInput
                         className="tasks-screen__search-input"
                         placeholder="Makeup work"
                         value={searchText}
                         onChange={(event) => setSearchText(event.target.value)}
-                        readOnly
-                        tabIndex={-1}
                     />
-                </button>
+                </div>
             </div>
 
             <div className="tasks-screen__chips" role="tablist" aria-label="Task categories">
@@ -209,45 +197,6 @@ const Tasks = () => {
                     </section>
                 </>
             )}
-
-            <div
-                className={`tasks-search-overlay ${isSearchOverlayOpen ? 'is-open' : ''}`}
-                onClick={() => setIsSearchOverlayOpen(false)}
-                aria-hidden={!isSearchOverlayOpen}
-            >
-                <div
-                    className="tasks-search-overlay__panel"
-                    onClick={(event) => event.stopPropagation()}
-                >
-                    <button
-                        type="button"
-                        className="tasks-search-overlay__close"
-                        onClick={() => setIsSearchOverlayOpen(false)}
-                        aria-label="Close search"
-                    >
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-                            <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                    </button>
-
-                    <div className="tasks-search-overlay__input-wrap">
-                        <span className="tasks-screen__search-icon" aria-hidden>
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
-                                <circle cx="11" cy="11" r="6.2" stroke="currentColor" strokeWidth="1.8" />
-                                <path d="M16 16l4.4 4.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                            </svg>
-                        </span>
-                        <input
-                            ref={overlayInputRef}
-                            type="text"
-                            className="tasks-screen__search-input"
-                            placeholder="Makeup work"
-                            value={searchText}
-                            onChange={(event) => setSearchText(event.target.value)}
-                        />
-                    </div>
-                </div>
-            </div>
         </main>
         </>
     );

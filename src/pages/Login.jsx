@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './Login.css';
-import MobileTool from '../Components/MobileTool';
+import MobileTool from '../components/MobileTool';
 import logo from '../Assets/IMG/logo.svg'
 import LogBtn from '../Common/LogBtn';
 import emailIcon from '../Assets/IMG/email_icon.svg';
-import gmailIcon from '../Assets/IMG/google_icon.svg'
+import gmailIcon from '../Assets/IMG/google_icon.svg';
+import { Link, useNavigate } from "react-router-dom";
 
 
 
@@ -28,12 +29,18 @@ const Home = () => {
             </div>
 
             <p className='login_p2'>Create your account and start turning your everyday skills into real cash.</p>
-
-            <LogBtn text='Continue with email address' icon={emailIcon} style={{width: "90%"}}  />
-            <LogBtn text='Continue with email address' icon={gmailIcon} style={{width: "90%"}} />
-            <LogBtn text='Continue with email address' icon={emailIcon} style={{width: "90%"}} />
-
+            <Link to='/home' className='link'>
+            <LogBtn text='Continue with email address' icon={emailIcon} style={{width: "100%"}}  />
+            </Link>
+            <Link to='/home' className='link'>
+            <LogBtn text='Continue with email address' icon={gmailIcon} style={{width: "100%"}} />
+            </Link>
+            <Link to='/home' className='link'>
+            <LogBtn text='Continue with email address' icon={emailIcon} style={{width: "100%"}} />
+            </Link>
+            <Link to='/Signup' className='link'>
             <p className='signup_btn'>Signup</p>
+            </Link>
 
         </div>
 

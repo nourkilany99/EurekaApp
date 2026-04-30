@@ -1,6 +1,6 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import VolunteerListItem from '../Components/VolunteerListItem';
+import MobileTool from '../components/MobileTool';
+import VolunteerListItem from '../components/VolunteerListItem';
 import './Volenteer.css';
 
 const tasks = [

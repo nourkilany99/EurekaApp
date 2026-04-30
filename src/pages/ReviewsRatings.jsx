@@ -1,6 +1,6 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
 import './UtilityPages.css';
 
 const ratingBars = [

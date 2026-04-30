@@ -1,6 +1,7 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
+import GlobalSearchInput from '../components/GlobalSearchInput';
 import './UtilityPages.css';
 
 const messageRows = [
@@ -32,7 +33,7 @@ const Messages = () => (
             <PageHeaderBack title="MESSAGES" />
             <div className="utility-search">
                 <span>⌕</span>
-                <input placeholder="Search messages..." />
+                <GlobalSearchInput placeholder="Search messages..." />
             </div>
             {messageRows.map((item) => <MessageItem key={item.name} item={item} />)}
         </div>

@@ -70,7 +70,7 @@ const NAV_ITEMS = [
     },
     {
         key: 'home',
-        to: '/',
+        to: '/home',
         label: 'Home',
         icon: <HomeIcon />,
         isCenter: true,

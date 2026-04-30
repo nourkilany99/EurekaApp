@@ -1,17 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
+import { useNavigate, Link } from 'react-router-dom';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
 import './UtilityPages.css';
 
 const settingGroups = [
     {
         title: 'Account',
         rows: [
-            { label: 'Edit Profile', icon: '👤' },
-            { label: 'Notifications', icon: '🔔' },
-            { label: 'Privacy & Security', icon: '🔒' },
-            { label: 'Payment Methods', icon: '💳' },
+            { label: 'Edit Profile', icon: '👤', path: '/edit-profile' },
+            { label: 'Notifications', icon: '🔔', path: '/notifications' },
+            { label: 'Privacy & Security', icon: '🔒', path: '/privacy' },
+            { label: 'Payment Methods', icon: '💳', path: '/payment-setup' },
         ],
     },
     {
@@ -25,7 +25,7 @@ const settingGroups = [
     {
         title: 'Support',
         rows: [
-            { label: 'Help & FAQ', icon: '❓' },
+            { label: 'Help & FAQ', icon: '❓', path: '/help-support' },
             { label: 'Contact Us', icon: '🪪' },
             { label: 'Rate App', icon: '⭐' },
         ],
@@ -34,7 +34,7 @@ const settingGroups = [
         title: 'Legal',
         rows: [
             { label: 'Terms of Service', icon: '📄' },
-            { label: 'Privacy Policy', icon: '🛡️' },
+            { label: 'Privacy Policy', icon: '🛡️', path: '/privacy' },
             { label: 'About', icon: 'ℹ️', right: 'v2.1.0' },
         ],
     },
@@ -53,28 +53,50 @@ const Settings = () => {
                     <section key={group.title}>
                         <h3 className="utility-section-title">{group.title}</h3>
                         <div className="settings-group">
-                            {group.rows.map((row) => (
-                                <div
-                                    className="settings-row"
-                                    key={row.label}
-                                    onClick={row.label === 'Payment Methods' ? () => navigate('/payment-setup') : undefined}
-                                >
-                                    <div className="settings-row__left">
-                                        <span>{row.icon}</span>
-                                        <span>{row.label}</span>
+                            {group.rows.map((row) => {
+                                const content = (
+                                    <>
+                                        <div className="settings-row__left">
+                                            <span>{row.icon}</span>
+                                            <span>{row.label}</span>
+                                        </div>
+                                        {row.toggle ? (
+                                            <button type="button" className="toggle is-on" aria-label={`${row.label} enabled`} />
+                                        ) : (
+                                            <span className="settings-arrow">{row.right || '›'}</span>
+                                        )}
+                                    </>
+                                );
+
+                                if (row.path) {
+                                    return (
+                                        <Link
+                                            to={row.path}
+                                            className="settings-row"
+                                            key={row.label}
+                                            style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }}
+                                        >
+                                            {content}
+                                        </Link>
+                                    );
+                                }
+
+                                return (
+                                    <div
+                                        className="settings-row"
+                                        key={row.label}
+                                    >
+                                        {content}
                                     </div>
-                                    {row.toggle ? (
-                                        <button type="button" className="toggle is-on" aria-label={`${row.label} enabled`} />
-                                    ) : (
-                                        <span className="settings-arrow">{row.right || '›'}</span>
-                                    )}
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </section>
                 ))}
 
-                <button type="button" className="logout-btn">Log Out</button>
+                <Link to='/' className='link' >
+                    <button type="button" className="logout-btn">Log Out</button>
+                </Link>
             </div>
         </div>
     );

@@ -266,14 +266,37 @@
 
 /* Horizontal List */
 .horizontal-list {
-    display: flex;
-    gap: 15px;
     overflow-x: auto;
     padding-bottom: 10px;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
 }
 .horizontal-list::-webkit-scrollbar { display: none; }
+
+.horizontal-list .link {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+    animation: scrollMarquee 25s linear infinite alternate;
+}
+
+.horizontal-list .link:hover,
+.horizontal-list .link:active {
+    animation-play-state: paused;
+}
+
+.horizontal-list .link > * {
+    width: 300px; /* Restore width since min-width was removed */
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+
+@keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% + 100vw - 40px)); }
+}
 
 /* Volunteer Header */
 .volunteer-header {

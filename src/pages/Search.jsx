@@ -1,6 +1,7 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
+import GlobalSearchInput from '../components/GlobalSearchInput';
 import './UtilityPages.css';
 
 const services = [
@@ -18,7 +19,7 @@ const Search = () => (
             <div className="search-topbar">
                 <div className="utility-search utility-search--tight">
                     <span>⌕</span>
-                    <input defaultValue="dog walking" />
+                    <GlobalSearchInput defaultValue="dog walking" />
                 </div>
                 <button type="button" className="search-filter-btn">≡</button>
             </div>

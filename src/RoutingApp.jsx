@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
-import Profile from './pages/Profile';
 import Skills from './pages/Skills';
 import Skills2 from './pages/Skills 2';
 import Notifications from './pages/Notifications';
@@ -24,23 +23,55 @@ import HelpSupport from './pages/HelpSupport';
 import ReviewsRatings from './pages/ReviewsRatings';
 import TaskHistory from './pages/TaskHistory';
 import Search from './pages/Search';
-import Messages from './pages/Messages';
-import Chat from './pages/Chat';
 import PaymentSetup from './pages/PaymentSetup';
 import EditProfile from './pages/EditProfile';
-import Settings from './pages/Settings';
-import Tasks from './pages/Tasks';
-import BottomNav from './Components/BottomNav';
+import BottomNav from './components/BottomNav';
+import PaymentPage from './pages/PaymentPage';
+import SettingsPage from './pages/SettingsPage';
+import SupportPage from './pages/SupportPage';
+import RatingsPage from './pages/RatingsPage';
+import TasksPage from './pages/TasksPage';
+import MessagesPage from './pages/MessagesPage';
+import ChatPage from './pages/ChatPage';
+import ProfilePage from './pages/ProfilePage';
+import ReportsPage from './pages/ReportsPage';
+import SafetyPage from './pages/SafetyPage';
+import AchievementsPage from './pages/AchievementsPage';
+import PortfolioPage from './pages/PortfolioPage';
+import AvailabilityPage from './pages/AvailabilityPage';
+import PrivacyPage from './pages/PrivacyPage';
+import ThemePage from './pages/ThemePage';
+import ReferralPage from './pages/ReferralPage';
+import LeaderboardPage from './pages/LeaderboardPage';
+import AiMatchPage from './pages/AiMatchPage';
+import ArPreviewPage from './pages/ArPreviewPage';
+import SmartPricingPage from './pages/SmartPricingPage';
+import PromoCodesPage from './pages/PromoCodesPage';
+import CallPage from './pages/CallPage';
+import ReportUserPage from './pages/ReportUserPage';
+import DisputeCenterPage from './pages/DisputeCenterPage';
+import BackgroundCheckPage from './pages/BackgroundCheckPage';
+
+const ConditionalBottomNav = () => {
+    const location = useLocation();
+    const hideBottomNav = location.pathname === "/" || location.pathname === "/Signup" || location.pathname === "/login" || location.pathname === "/signup";
+
+    return (
+        <>
+            {!hideBottomNav && <BottomNav />}
+        </>
+    );
+};
 
 const RoutingApp = () => {
     return (
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/Login" element={<Login />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<Login />} />
                     <Route path="/Signup" element={<Signup />} />
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/skills" element={<Skills />} />
                     <Route path="/skills-2" element={<Skills2 />} />
                     <Route path="/notifications" element={<Notifications />} />
@@ -50,25 +81,42 @@ const RoutingApp = () => {
                     <Route path="/requests/details" element={<RequestsDetails />} />
                     <Route path="/apply-for-the-task" element={<ApplyForTheTask />} />
                     <Route path="/requests" element={<Requests />} />
-                    <Route path="/account-under-review" element={<AccountUnderReview />} />
                     <Route path="/jobs-on-maps" element={<JobsOnMaps />} />
                     <Route path="/feed" element={<Feed />} />
                     <Route path="/volunteer" element={<Volunteer />} />
                     <Route path="/learn-more" element={<LearnMore />} />
                     <Route path="/maps-open" element={<MapsOpen />} />
-                    <Route path="/volenteer" element={<Volenteer />} />
                     <Route path="/help-support" element={<HelpSupport />} />
                     <Route path="/reviews-ratings" element={<ReviewsRatings />} />
                     <Route path="/task-history" element={<TaskHistory />} />
                     <Route path="/search" element={<Search />} />
-                    <Route path="/tasks" element={<Tasks />} />
-                    <Route path="/messages" element={<Messages />} />
-                    <Route path="/chat" element={<Chat />} />
+                    <Route path="/tasks" element={<TasksPage />} />
+                    <Route path="/messages" element={<MessagesPage />} />
+                    <Route path="/chat" element={<ChatPage />} />
                     <Route path="/payment-setup" element={<PaymentSetup />} />
                     <Route path="/edit-profile" element={<EditProfile />} />
-                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/settings" element={<SettingsPage />} />
+                    <Route path="/payment" element={<PaymentPage />} />
+                    <Route path="/support" element={<SupportPage />} />
+                    <Route path="/reports" element={<ReportsPage />} />
+                    <Route path="/safety" element={<SafetyPage />} />
+                    <Route path="/achievements" element={<AchievementsPage />} />
+                    <Route path="/portfolio" element={<PortfolioPage />} />
+                    <Route path="/availability" element={<AvailabilityPage />} />
+                    <Route path="/privacy" element={<PrivacyPage />} />
+                    <Route path="/theme" element={<ThemePage />} />
+                    <Route path="/referral" element={<ReferralPage />} />
+                    <Route path="/leaderboard" element={<LeaderboardPage />} />
+                    <Route path="/ai-match" element={<AiMatchPage />} />
+                    <Route path="/ar-preview" element={<ArPreviewPage />} />
+                    <Route path="/smart-pricing" element={<SmartPricingPage />} />
+                    <Route path="/promo-codes" element={<PromoCodesPage />} />
+                    <Route path="/call" element={<CallPage />} />
+                    <Route path="/report-user" element={<ReportUserPage />} />
+                    <Route path="/dispute-center" element={<DisputeCenterPage />} />
+                    <Route path="/background-check" element={<BackgroundCheckPage />} />
                 </Routes>
-                <BottomNav />
+                <ConditionalBottomNav />
             </BrowserRouter>
         </>
     );

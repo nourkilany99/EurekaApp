@@ -1,47 +1,54 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
-import SearchFilterBar from '../Components/SearchFilterBar';
-import SkillAddChip from '../Components/SkillAddChip';
-import SkillExploreCard from '../Components/SkillExploreCard';
-import PrimaryButton from '../Components/PrimaryButton';
-import './Skills.css';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
+import Card from '../components/Card';
+import StatCard from '../components/StatCard';
+import StatusBadge from '../components/StatusBadge';
+import ActionButton from '../components/ActionButton';
+import './UtilityPages.css';
+import './ScreenPages.css';
+import './FeaturePages.css';
 
-const catImg =
-    'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600&auto=format&fit=crop';
+const skills = [
+    { name: 'Dog Walking', verified: true, endorsements: 28, endorsed: true },
+    { name: 'House Cleaning', verified: true, endorsements: 24, endorsed: true },
+    { name: 'Lawn Care', verified: false, endorsements: 19, endorsed: false },
+    { name: 'Babysitting', verified: true, endorsements: 15, endorsed: true },
+    { name: 'Pet Sitting', verified: false, endorsements: 12, endorsed: false },
+    { name: 'Grocery Shopping', verified: false, endorsements: 10, endorsed: false },
+];
 
 const SkillsPage = () => (
-    <div className="skills-page">
+    <div className="utility-page">
         <MobileTool />
-        <div className="skills-page__inner">
-            <PageHeaderBack
-                titleLines={['CHOOSE YOUR', 'SKILLS']}
-                subtitle="Add skills to find more opportunities"
-                right={
-                    <button type="button" className="skills-page__save">
-                        Save
-                    </button>
-                }
-            />
-            <SearchFilterBar placeholder="Makeup work" />
-            <h2 className="skills-page__h2">Add to you</h2>
-            <div className="skills-page__add-grid">
-                <SkillAddChip icon="🐾" label="Pet walking" />
-                <SkillAddChip icon="🐕" label="Dog Walking" />
-                <SkillAddChip icon="⏱" label="Babysitting" />
-                <SkillAddChip icon="📦" label="Moving Help" />
-                <SkillAddChip icon="💄" label="Makeup Services" wide />
-            </div>
-            <h2 className="skills-page__h2 skills-page__h2--explore">Explore skills</h2>
-            <div className="skills-page__explore-grid">
-                <SkillExploreCard imageUrl={catImg} label="Pet walking" />
-                <SkillExploreCard imageUrl={catImg} label="Pet walking" />
-                <SkillExploreCard imageUrl={catImg} label="Pet walking" />
-                <SkillExploreCard imageUrl={catImg} label="Pet walking" />
-            </div>
-            <PrimaryButton type="button" className="skills-page__explore-btn">
-                Explore more
-            </PrimaryButton>
+        <div className="utility-page__inner ui-screen-stack">
+            <PageHeaderBack title="SKILLS & ENDORSEMENTS" />
+            <section className="ui-stats-grid">
+                <StatCard label="Total Endorsements" value="108" tone="success" />
+                <StatCard label="Verified Skills" value="3" />
+                <StatCard label="Top Rank" value="#18" />
+            </section>
+            <ActionButton variant="secondary">+ Add Skill</ActionButton>
+            <Card>
+                <h3 className="utility-section-title">Top Skills</h3>
+                <div className="ui-screen-stack">
+                    {skills.map((skill) => (
+                        <article key={skill.name} className="feature-card">
+                            <div className="feature-row">
+                                <div>
+                                    <p className="feature-title">
+                                        {skill.name} {skill.verified ? <StatusBadge tone="purple">Verified</StatusBadge> : null}
+                                    </p>
+                                    <p className="feature-muted">{skill.endorsements} endorsements</p>
+                                </div>
+                                <ActionButton variant={skill.endorsed ? 'secondary' : 'primary'}>
+                                    {skill.endorsed ? 'Endorsed' : 'Endorse'}
+                                </ActionButton>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </Card>
         </div>
     </div>
 );

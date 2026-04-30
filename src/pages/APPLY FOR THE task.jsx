@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
-import ProfilePreviewCard from '../Components/ProfilePreviewCard';
-import TaskSummaryCard from '../Components/TaskSummaryCard';
-import SelectionOption from '../Components/SelectionOption';
-import SafetyFirst from '../Components/SafetyFirst';
-import TaskCard from '../Components/TaskCard';
-import PrimaryButton from '../Components/PrimaryButton';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
+import ProfilePreviewCard from '../components/ProfilePreviewCard';
+import TaskSummaryCard from '../components/TaskSummaryCard';
+import SelectionOption from '../components/SelectionOption';
+import SafetyFirst from '../components/SafetyFirst';
+import TaskCard from '../components/TaskCard';
+import PrimaryButton from '../components/PrimaryButton';
 import './APPLY FOR THE task.css';
 
 const taskImage =

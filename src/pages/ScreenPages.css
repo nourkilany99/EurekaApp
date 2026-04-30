@@ -1,0 +1,180 @@
+.ui-screen-stack {
+    display: grid;
+    gap: 12px;
+}
+
+.ui-progress {
+    height: 6px;
+    border-radius: 999px;
+    background: #2b2b2d;
+    overflow: hidden;
+}
+
+.ui-progress__fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2C5E49, #1F4334);
+}
+
+.ui-ratings-row {
+    display: grid;
+    grid-template-columns: 16px 1fr 24px;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: #bdbdbd;
+}
+
+.ui-task-item {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 12px;
+}
+
+.ui-task-item__top,
+.ui-task-item__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.ui-task-item h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.ui-task-item p {
+    margin: 6px 0 10px;
+    color: #9a9a9a;
+    font-size: 12px;
+}
+
+.ui-task-item__badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.ui-task-item__badge--success {
+    background: rgba(66, 198, 140, 0.16);
+    border: 1px solid rgba(66, 198, 140, 0.22);
+    color: #47d899;
+}
+
+.ui-task-item__badge--neutral {
+    background: #252527;
+    border: 1px solid #3a3a3c;
+    color: #e5e5e5;
+}
+
+.ui-task-item__badge--danger {
+    background: rgba(94, 13, 20, 0.45);
+    border: 1px solid rgba(130, 30, 40, 0.52);
+    color: #ffdbdb;
+}
+
+.ui-task-item__bottom span {
+    color: #8f8f8f;
+    font-size: 12px;
+}
+
+.ui-task-item__bottom strong {
+    color: #fff;
+    font-size: 14px;
+}
+
+.ui-profile-card {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+}
+
+.ui-profile-card h3 {
+    margin: 0;
+    font-size: 26px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.ui-profile-card p {
+    margin: 4px 0 0;
+    color: #9a9a9a;
+    font-size: 13px;
+}
+
+.ui-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.ui-stat-card {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 12px 10px;
+}
+
+.ui-stat-card p {
+    margin: 0;
+    color: #9a9a9a;
+    font-size: 11px;
+}
+
+.ui-stat-card h4 {
+    margin: 6px 0 0;
+    font-size: 18px;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+}
+
+.ui-stat-card--success h4 {
+    color: #47d899;
+}
+
+.ui-muted-text {
+    margin: 0;
+    color: #9a9a9a;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.ui-report-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.ui-report-line span {
+    color: #c9c9c9;
+}
+
+.ui-report-line strong {
+    color: #fff;
+}
+
+.ui-safety-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.ui-pill-danger {
+    background: rgba(94, 13, 20, 0.45);
+}
+
+.ui-safety-list {
+    margin: 0;
+    padding-left: 18px;
+    color: #cfcfcf;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ui-safety-list li + li {
+    margin-top: 4px;
+}

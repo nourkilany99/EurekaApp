@@ -1,5 +1,6 @@
 import React from 'react';
 import './SearchFilterBar.css';
+import GlobalSearchInput from './GlobalSearchInput';
 
 const FilterIcon = () => (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -26,11 +27,9 @@ const SearchFilterBar = ({ placeholder = 'Makeup work' }) => (
         </span>
         <div className="search-filter-bar__field">
             <SearchIcon />
-            <input
-                type="search"
+            <GlobalSearchInput
                 className="search-filter-bar__input"
                 placeholder={placeholder}
-                readOnly
                 aria-label="Search tasks"
             />
         </div>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import MobileTool from '../Components/MobileTool';
-import FrameBackHeader from '../Components/FrameBackHeader';
-import MapMarker from '../Components/MapMarker';
+import MobileTool from '../components/MobileTool';
+import FrameBackHeader from '../components/FrameBackHeader';
+import MapMarker from '../components/MapMarker';
 import './maps open.css';
 
 const pins = [

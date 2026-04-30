@@ -1,5 +1,5 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
+import MobileTool from '../components/MobileTool';
 import './Feed.css';
 
 const Feed = () => (

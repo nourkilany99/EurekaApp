@@ -37,3 +37,24 @@
     flex-wrap: wrap;
     gap: 10px;
 }
+
+.profile-page__view-reviews-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.2s ease;
+}
+
+.profile-page__view-reviews-btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}

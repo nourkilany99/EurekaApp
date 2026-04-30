@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './mobileTools.css'
+import './MobileTools.css'
 import mobiletool from '../Assets/IMG/mobiletools.svg'
 
 const MobileTool = () => {

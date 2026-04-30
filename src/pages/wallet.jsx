@@ -1,10 +1,10 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
-import WalletBalanceSection from '../Components/WalletBalanceSection';
-import WalletTransactionItem from '../Components/WalletTransactionItem';
-import WalletSecurityNotice from '../Components/WalletSecurityNotice';
-import PrimaryButton from '../Components/PrimaryButton';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
+import WalletBalanceSection from '../components/WalletBalanceSection';
+import WalletTransactionItem from '../components/WalletTransactionItem';
+import WalletSecurityNotice from '../components/WalletSecurityNotice';
+import PrimaryButton from '../components/PrimaryButton';
 import './wallet.css';
 
 const txImg1 = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop';

@@ -1,9 +1,9 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
 import under_review from '../Assets/IMG/under_review.svg';
 
-import FrameBackHeader from '../Components/FrameBackHeader';
+import FrameBackHeader from '../components/FrameBackHeader';
 import './Learn more.css';
 
 const LearnMore = () => (

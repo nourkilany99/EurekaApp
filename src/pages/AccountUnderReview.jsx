@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import MobileTool from '../Components/MobileTool';
+import MobileTool from '../components/MobileTool';
 import './AccountUnderReview.css';
 
 const AccountUnderReview = () => {

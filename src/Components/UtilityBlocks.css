@@ -1,0 +1,136 @@
+.action-button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(44, 94, 73, 0.28);
+    filter: brightness(1.06);
+}
+
+.action-button--primary {
+    background: linear-gradient(90deg, #2c5e49 0%, #1f4334 50%, #6b2f8d 100%);
+}
+
+.action-button--secondary {
+    background: #252527;
+    border: 1px solid #3a3a3c;
+    color: #efefef;
+}
+
+.action-button--danger {
+    background: linear-gradient(90deg, #6a1a23, #8e2632);
+}
+
+.list-card {
+    animation: fade-scale-in 0.24s ease;
+}
+
+.list-card__head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.list-card__title {
+    margin-top: 0;
+}
+
+.list-card__subtitle {
+    margin: -4px 0 0;
+    color: #8f8f8f;
+    font-size: 12px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid #3a3a3c;
+    background: #252527;
+    color: #efefef;
+}
+
+.status-badge--success {
+    color: #47d899;
+    background: rgba(66, 198, 140, 0.16);
+    border-color: rgba(66, 198, 140, 0.24);
+}
+
+.status-badge--warning {
+    color: #e5c45c;
+    background: rgba(176, 140, 41, 0.15);
+    border-color: rgba(176, 140, 41, 0.32);
+}
+
+.status-badge--danger {
+    color: #ffdbdb;
+    background: rgba(94, 13, 20, 0.45);
+    border-color: rgba(130, 30, 40, 0.52);
+}
+
+.status-badge--purple {
+    color: #d9b5ff;
+    background: rgba(107, 47, 141, 0.25);
+    border-color: rgba(107, 47, 141, 0.5);
+}
+
+.toggle-item {
+    background: #171719;
+    border: 1px solid #252527;
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-item__copy p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.toggle-item__copy span {
+    color: #909090;
+    font-size: 12px;
+}
+
+.toggle-item__switch {
+    transition: background 0.25s ease;
+}
+
+.toggle::after {
+    transition: left 0.25s ease;
+}
+
+@keyframes fade-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -21,7 +21,7 @@ const OngoingWideTaskCard = ({
     <article className="ongoing-wide-task-card">
         <div className="ongoing-wide-task-card__text">
             <p className="ongoing-wide-task-card__status">{status}</p>
-            <h2 className="ongoing-wide-task-card__title">{title}</h2>
+            <p className="ongoing-wide-task-card__title">{title}</p>
             <p className="ongoing-wide-task-card__loc">
                 <PinIcon /> {location}
             </p>

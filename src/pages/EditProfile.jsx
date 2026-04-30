@@ -1,33 +1,96 @@
-import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
 import './UtilityPages.css';
 
-const EditProfile = () => (
-    <div className="utility-page">
-        <MobileTool />
-        <div className="utility-page__inner">
-            <PageHeaderBack title="EDIT PROFILE" />
+const EditProfile = () => {
+    const navigate = useNavigate();
+    const [profile, setProfile] = useState({
+        name: 'Seif Ibrahim',
+        age: '23',
+        bio: 'Art designer, dog friendly',
+        location: "Nasr city, Hassan el ma'moon",
+        phone: '+20 123 456 7890'
+    });
 
-            <div className="profile-photo">👤</div>
-            <button type="button" className="change-photo">Change Photo</button>
+    useEffect(() => {
+        const savedProfile = localStorage.getItem('userProfile');
+        if (savedProfile) {
+            setProfile(JSON.parse(savedProfile));
+        }
+    }, []);
 
-            <p className="field-label">Full Name</p>
-            <input className="field-input" defaultValue="Seif Ibrahim" />
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setProfile(prev => ({ ...prev, [name]: value }));
+    };
 
-            <p className="field-label">Age</p>
-            <input className="field-input" defaultValue="23" />
+    const handleSave = () => {
+        localStorage.setItem('userProfile', JSON.stringify(profile));
+        navigate('/profile');
+    };
 
-            <p className="field-label">Bio</p>
-            <textarea className="field-input" />
+    return (
+        <div className="utility-page">
+            <MobileTool />
+            <div className="utility-page__inner">
+                <PageHeaderBack title="EDIT PROFILE" />
 
-            <p className="field-label">Location</p>
-            <input className="field-input" defaultValue="Nasr city, Hassan el ma'moon" />
+                <div className="profile-photo">👤</div>
+                <button type="button" className="change-photo">Change Photo</button>
 
-            <p className="field-label">Phone Number</p>
-            <input className="field-input" defaultValue="+20 123 456 7890" />
+                <p className="field-label">Full Name</p>
+                <input 
+                    name="name"
+                    className="field-input" 
+                    value={profile.name} 
+                    onChange={handleChange}
+                />
+
+                <p className="field-label">Age</p>
+                <input 
+                    name="age"
+                    className="field-input" 
+                    value={profile.age} 
+                    onChange={handleChange}
+                />
+
+                <p className="field-label">Bio</p>
+                <textarea 
+                    name="bio"
+                    className="field-input" 
+                    value={profile.bio} 
+                    onChange={handleChange}
+                    rows="3"
+                />
+
+                <p className="field-label">Location</p>
+                <input 
+                    name="location"
+                    className="field-input" 
+                    value={profile.location} 
+                    onChange={handleChange}
+                />
+
+                <p className="field-label">Phone Number</p>
+                <input 
+                    name="phone"
+                    className="field-input" 
+                    value={profile.phone} 
+                    onChange={handleChange}
+                />
+
+                <button 
+                    type="button" 
+                    className="save-profile-btn"
+                    onClick={handleSave}
+                >
+                    Save Changes
+                </button>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default EditProfile;

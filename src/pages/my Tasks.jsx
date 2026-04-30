@@ -1,12 +1,13 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import MyTasksHeader from '../Components/MyTasksHeader';
-import OngoingWideTaskCard from '../Components/OngoingWideTaskCard';
-import StatPillCard from '../Components/StatPillCard';
-import CategoryFilterRow from '../Components/CategoryFilterRow';
-import TaskCard from '../Components/TaskCard';
-import PrimaryButton from '../Components/PrimaryButton';
+import MobileTool from '../components/MobileTool';
+import MyTasksHeader from '../components/MyTasksHeader';
+import OngoingWideTaskCard from '../components/OngoingWideTaskCard';
+import StatPillCard from '../components/StatPillCard';
+import CategoryFilterRow from '../components/CategoryFilterRow';
+import TaskCard from '../components/TaskCard';
+import PrimaryButton from '../components/PrimaryButton';
 import './MyTasksPage.css';
+import { Link, useNavigate } from "react-router-dom";
 
 const catImg =
     'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600&auto=format&fit=crop';
@@ -61,11 +62,16 @@ const MyTasksPage = () => (
             />
 
             <div className="my-tasks-page__stats-row">
-                <StatPillCard value="22" label="Done tasks" />
-                <StatPillCard value="4" label="Pending requests" />
+
+                <Link to="/task-history" className="link">
+                    <StatPillCard value="22" label="Done tasks" />
+                </Link>
+                <Link to="/requests" className="link">
+                    <StatPillCard value="4" label="Pending requests" />
+                </Link>
             </div>
 
-            <h2 className="my-tasks-page__section-title">AVAILABLE TASKS</h2>
+            <p className="my-tasks-page__section-title">AVAILABLE TASKS</p>
             <CategoryFilterRow chipItems={myTasksFilterChips} />
             <div className="my-tasks-page__grid">
                 {tasks.map((t) => (

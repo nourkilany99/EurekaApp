@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
+import GlobalSearchInput from '../components/GlobalSearchInput';
 import './UtilityPages.css';
 
 const faqSections = [
@@ -48,7 +49,7 @@ const HelpSupport = () => {
                 <PageHeaderBack title="HELP & SUPPORT" />
                 <div className="utility-search">
                     <span>⌕</span>
-                    <input placeholder="Search for help..." />
+                    <GlobalSearchInput placeholder="Search for help..." />
                 </div>
 
                 <div className="utility-actions-grid">

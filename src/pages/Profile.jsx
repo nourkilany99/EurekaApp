@@ -1,11 +1,12 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import ProfileHero from '../Components/ProfileHero';
-import ProfileIdentityBar from '../Components/ProfileIdentityBar';
-import ProfileSectionCard from '../Components/ProfileSectionCard';
-import ProfileSkillChip from '../Components/ProfileSkillChip';
-import ProfileReviewItem from '../Components/ProfileReviewItem';
-import ProfileEarningsRow from '../Components/ProfileEarningsRow';
+import { Link } from 'react-router-dom';
+import MobileTool from '../components/MobileTool';
+import ProfileHero from '../components/ProfileHero';
+import ProfileIdentityBar from '../components/ProfileIdentityBar';
+import ProfileSectionCard from '../components/ProfileSectionCard';
+import ProfileSkillChip from '../components/ProfileSkillChip';
+import ProfileReviewItem from '../components/ProfileReviewItem';
+import ProfileEarningsRow from '../components/ProfileEarningsRow';
 import './Profile.css';
 
 const Profile = () => (
@@ -55,6 +56,27 @@ const Profile = () => (
                     author="Lina R."
                     quote="Very responsible and arrived on time. My dog loved the walk!"
                 />
+
+                <Link
+                    to="/reviews-ratings"
+                    className="profile-page__view-reviews-btn"
+                    style={{
+                        display: 'block',
+                        width: '100%',
+                        padding: '12px',
+                        marginTop: '16px',
+                        textAlign: 'center',
+                        backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                        color: '#fff',
+                        borderRadius: '12px',
+                        textDecoration: 'none',
+                        fontWeight: '600',
+                        fontSize: '14px',
+                        border: '1px solid rgba(255, 255, 255, 0.12)'
+                    }}
+                >
+                    View Reviews
+                </Link>
             </ProfileSectionCard>
 
             <ProfileSectionCard pill="Earnings Summary" showEdit={false}>

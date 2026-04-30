@@ -1,7 +1,7 @@
 import React from 'react';
 import './Signup.css';
-import MobileTool from '../Components/MobileTool';
-import CardContainer from '../Components/CardContainer';
+import MobileTool from '../components/MobileTool';
+import CardContainer from '../components/CardContainer';
 
 const Signup = () => {
   const steps = [

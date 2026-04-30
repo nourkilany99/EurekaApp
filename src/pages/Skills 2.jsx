@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import MobileTool from '../Components/MobileTool';
-import SearchFilterBar from '../Components/SearchFilterBar';
-import CategoryChips from '../Components/CategoryChips';
-import SkillPickerCard from '../Components/SkillPickerCard';
+import MobileTool from '../components/MobileTool';
+import SearchFilterBar from '../components/SearchFilterBar';
+import CategoryChips from '../components/CategoryChips';
+import SkillPickerCard from '../components/SkillPickerCard';
 import './Skills 2.css';
 
 const catImg =

@@ -1,8 +1,8 @@
 import React from 'react';
-import MobileTool from '../Components/MobileTool';
-import PageHeaderBack from '../Components/PageHeaderBack';
-import HorizontalDatePicker from '../Components/HorizontalDatePicker';
-import ScheduleTaskCard from '../Components/ScheduleTaskCard';
+import MobileTool from '../components/MobileTool';
+import PageHeaderBack from '../components/PageHeaderBack';
+import HorizontalDatePicker from '../components/HorizontalDatePicker';
+import ScheduleTaskCard from '../components/ScheduleTaskCard';
 import './Calender.css';
 
 const timeRows = ['07:00', '08:00', '09:00', '10:00', '11:00'];

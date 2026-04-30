@@ -14,9 +14,15 @@
 }
 
 .my-tasks-page .my-tasks-header__title {
-    font-family: 'Luicy', sans-serif !important;
-    font-size: 42px;
-    letter-spacing: 0.01em;
+    margin: 0;
+    text-align: start;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    line-height: 1.05;
+    -webkit-text-stroke: 1px #141414;
 }
 
 .my-tasks-page .my-tasks-header__sub {
@@ -48,8 +54,8 @@
 }
 
 .my-tasks-page .ongoing-wide-task-card__title {
-    font-family: 'Inter', sans-serif;
-    font-size: 34px;
+    font-family: reg;
+    font-size: 24px;
     line-height: 0.9;
     font-weight: 700;
 }
@@ -78,9 +84,10 @@
 
 .my-tasks-page .stat-pill-card__val {
     font-family: 'Luicy', sans-serif !important;
-    font-size: 40px;
+    font-size: 24px;
     margin: 0 0 2px;
     line-height: 0.9;
+    -webkit-text-stroke: 1px #262626;
 }
 
 .my-tasks-page .stat-pill-card__lbl {
@@ -89,9 +96,9 @@
 }
 
 .my-tasks-page__section-title {
-    margin: 0 0 10px;
+    margin: 10% 0 5% 0;
     font-family: 'Luicy', sans-serif !important;
-    font-size: 42px;
+    font-size: 22px;
     line-height: 0.9;
     letter-spacing: 0.01em;
 }
@@ -141,17 +148,19 @@
 
 .my-tasks-page__explore-more.primary-button {
     margin-top: 0;
+    -webkit-text-stroke: 1px var(--main-color);
     border-radius: 12px;
     height: 44px;
     padding: 0 16px;
     font-size: 26px;
     line-height: 0.95;
     font-family: 'Luicy', sans-serif !important;
-    background: linear-gradient(135deg, #af3bff 0%, #7d26f2 100%);
-    box-shadow: 0 10px 22px rgba(125, 38, 242, 0.4);
+    background: var(--main-color);
+    box-shadow: 0 10px 22px #043a0d;
 }
 
 @media (min-width: 390px) {
+
     .my-tasks-page__content,
     .my-tasks-page__footer-btn-wrap {
         padding-inline: 18px;
