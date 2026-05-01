@@ -1,10 +1,19 @@
-.mobileTools_div{
-    width: 90%;
-    margin: 0 auto;
-    padding:  5%;
+.mobileTools_div {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
-
-.mobileTools{
-    width: 100%;
+.mobileTools {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }

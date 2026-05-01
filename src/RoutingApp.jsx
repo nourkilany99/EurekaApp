@@ -54,7 +54,7 @@ import BackgroundCheckPage from './pages/BackgroundCheckPage';
 
 const ConditionalBottomNav = () => {
     const location = useLocation();
-    const hideBottomNav = location.pathname === "/" || location.pathname === "/Signup" || location.pathname === "/login" || location.pathname === "/signup";
+    const hideBottomNav = location.pathname === "/" || location.pathname === "/Signup" || location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/learn-more";
 
     return (
         <>
