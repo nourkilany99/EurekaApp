@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import MobileTool from '../components/MobileTool';
 import GlobalSearchInput from '../components/GlobalSearchInput';
@@ -12,6 +13,7 @@ const FALLBACK_CAT_IMAGE =
 const CATEGORIES = ['All', 'Pet Care', 'Moving Help', 'Babysitting'];
 
 const TasksPage = () => {
+    const navigate = useNavigate();
     const [allTasks, setAllTasks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchText, setSearchText] = useState('');
@@ -106,15 +108,16 @@ const TasksPage = () => {
                 ) : (
                     <section className="tasks-screen__list tasks-blob-grid" aria-label="Available tasks">
                         {filteredTasks.map((task) => (
-                            <TaskCard
-                                key={task.id}
-                                variant="available"
-                                bgImage={task.image_url || FALLBACK_CAT_IMAGE}
-                                title={task.title}
-                                subtitle={task.description}
-                                price={task.price}
-                                tag={task.tag}
-                            />
+                            <div key={task.id} onClick={() => navigate('/requests/details', { state: { task } })} style={{ cursor: 'pointer', textDecoration: 'none' }}>
+                                <TaskCard
+                                    variant="available"
+                                    bgImage={task.image_url || FALLBACK_CAT_IMAGE}
+                                    title={task.title}
+                                    subtitle={task.description}
+                                    price={task.price}
+                                    tag={task.tag}
+                                />
+                            </div>
                         ))}
                     </section>
                 )}

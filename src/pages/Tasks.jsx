@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../Supabase';
 import './Tasks.css';
 import MobileTool from '../components/MobileTool';
@@ -175,6 +176,7 @@ const DEMO_TASKS_PLACEHOLDER = [
 ];
 
 const Tasks = () => {
+    const navigate = useNavigate();
     const [allTasks, setAllTasks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchText, setSearchText] = useState('');
@@ -272,15 +274,16 @@ const Tasks = () => {
                 <>
                     <section className="tasks-screen__list tasks-blob-grid" aria-label="Available tasks">
                         {filteredTasks.map((task) => (
-                            <TaskCard
-                                key={task.id}
-                                variant="available"
-                                bgImage={task.image_url || FALLBACK_CAT_IMAGE}
-                                title={task.title}
-                                subtitle={task.description}
-                                price={task.price}
-                                tag={task.tag}
-                            />
+                            <div key={task.id} onClick={() => navigate('/requests/details', { state: { task } })} style={{ cursor: 'pointer', textDecoration: 'none' }}>
+                                <TaskCard
+                                    variant="available"
+                                    bgImage={task.image_url || FALLBACK_CAT_IMAGE}
+                                    title={task.title}
+                                    subtitle={task.description}
+                                    price={task.price}
+                                    tag={task.tag}
+                                />
+                            </div>
                         ))}
                     </section>
                 </>

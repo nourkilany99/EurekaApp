@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Home.css';
 import { supabase } from '../supabaseClient';
+import { useUser } from '../context/UserContext';
 import 'leaflet/dist/leaflet.css';
 import MobileTool from '../components/MobileTool';
 import location from '../Assets/IMG/location.svg';
@@ -89,6 +90,10 @@ function MapClickHandler({ selectedPin, setSelectedPin, navigate }) {
 
 const Home = () => {
     const navigate = useNavigate();
+    const { user, profile } = useUser();
+    const isVerified = profile?.status === 'verified';
+    const userName = profile?.name || 'User';
+    const userInitial = userName[0]?.toUpperCase() || '?';
     const containerRef = useRef(null);
     const rafRef = useRef(0);
     const startXRef = useRef(0);
@@ -104,8 +109,14 @@ const Home = () => {
     const [selectedPin, setSelectedPin] = useState(null);
     const [notifOpen, setNotifOpen] = useState(false);
     const [locationSearch, setLocationSearch] = useState('');
-    const [locationLabel, setLocationLabel] = useState('Nasr City, Cairo');
-    const [mapCenter, setMapCenter] = useState([30.0444, 31.2357]);
+    const [locationLabel, setLocationLabel] = useState(() => {
+        const saved = user?.id ? localStorage.getItem(`loc_label_${user.id}`) : null;
+        return saved || 'Nasr City, Cairo';
+    });
+    const [mapCenter, setMapCenter] = useState(() => {
+        const saved = user?.id ? localStorage.getItem(`loc_coords_${user.id}`) : null;
+        return saved ? JSON.parse(saved) : [30.0444, 31.2357];
+    });
     const [locationOpen, setLocationOpen] = useState(false);
     const [locationResults, setLocationResults] = useState([]);
     const [locationLoading, setLocationLoading] = useState(false);
@@ -365,11 +376,14 @@ const Home = () => {
                     <div className='div1_patch1'>
                         <Link to="/profile" >
                             <div>
-                                <img src={profileIMG} alt='Profile' className="profile-img" />
+                                {profile?.avatar_url
+                                    ? <img src={profile.avatar_url} alt='Profile' className="profile-img" />
+                                    : <div className="profile-img profile-img--initial">{userInitial}</div>
+                                }
                             </div>
                         </Link>
                         <div>
-                            <p className="welcome-text">Welcome, Seif</p>
+                            <p className="welcome-text">Welcome, {userName}</p>
                             <div className="location-div" onClick={() => setLocationOpen(true)} style={{ cursor: 'pointer' }}>
                                 <img src={location} alt='Location' />
                                 <p>{locationLabel}</p>
@@ -388,17 +402,19 @@ const Home = () => {
                 </div>
 
                 <div className="content-pad">
-                    {/* Warning Banner */}
-                    <div className="warning-banner">
-                        <div className="warning-icon">!</div>
-                        <div className="warning-text">
-                            <p>Your account is under review.</p>
-                            <span>Verification is in progress - this usually takes a short time.</span>
+                    {/* Warning Banner — only for under-review users */}
+                    {!isVerified && (
+                        <div className="warning-banner">
+                            <div className="warning-icon">!</div>
+                            <div className="warning-text">
+                                <p>Your account is under review.</p>
+                                <span>Verification is in progress - this usually takes a short time.</span>
+                            </div>
+                            <Link to="/learn-more">
+                                <button className="warning-btn">Learn more</button>
+                            </Link>
                         </div>
-                        <Link to="/learn-more">
-                            <button className="warning-btn">Learn more</button>
-                        </Link>
-                    </div>
+                    )}
 
                     {/* Calendar */}
                     <div className="section">
@@ -411,7 +427,7 @@ const Home = () => {
                                 <div key={day.id} className="cal-day-wrap">
                                     <div
                                         className={`cal-day ${day.day_number === activeDay ? 'active' : ''}`}
-                                        onClick={() => { setActiveDay(day.day_number); navigate('/calendar'); }}
+                                        onClick={() => setActiveDay(day.day_number)}
                                     >
                                         {day.day_number}
                                     </div>
@@ -420,30 +436,48 @@ const Home = () => {
                             ))}
                         </div>
 
-                        <div
-                            onTouchStart={onCardTouchStart}
-                            onTouchEnd={onCardTouchEnd}
-                        >
-                            {calendarTask ? (
-                                <Link className='no-link' to="/requests/details">
-                                    <TaskCard
-                                        variant="ongoing"
-                                        title={calendarTask.title}
-                                        subtitle={calendarTask.subtitle}
-                                        time={calendarTask.time_note}
-                                        bgImage={calendarTask.bg_image}
-                                    />
-                                </Link>
-                            ) : (
-                                <p style={{ color: '#555', fontSize: '13px', padding: '12px 0' }}>
-                                    No task scheduled for this day.
-                                </p>
-                            )}
-                        </div>
+                        {isVerified && (
+                            <div
+                                onTouchStart={onCardTouchStart}
+                                onTouchEnd={onCardTouchEnd}
+                            >
+                                {calendarTask ? (
+                                    <Link className='no-link' to="/requests/details" state={{ task: calendarTask }}>
+                                        <TaskCard
+                                            variant="ongoing"
+                                            title={calendarTask.title}
+                                            subtitle={calendarTask.subtitle}
+                                            time={calendarTask.time_note}
+                                            bgImage={calendarTask.bg_image}
+                                        />
+                                    </Link>
+                                ) : (
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0' }}>
+                                        <p style={{ color: '#555', fontSize: '13px', margin: 0 }}>No task scheduled for this day.</p>
+                                        <button
+                                            onClick={() => navigate('/tasks')}
+                                            style={{
+                                                background: 'rgba(21,209,122,0.12)',
+                                                border: '1px solid rgba(21,209,122,0.25)',
+                                                color: '#15d17a',
+                                                borderRadius: 20,
+                                                padding: '5px 14px',
+                                                fontSize: '12px',
+                                                fontWeight: 600,
+                                                cursor: 'pointer',
+                                                whiteSpace: 'nowrap',
+                                            }}
+                                        >
+                                            Explore Tasks
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
 
-                    {/* Recommended */}
-                    <div className="section mt-4">
+                    {/* Recommended — only for verified users */}
+                    {isVerified && <div className="section mt-4">
                         <h2 className="section-title main-title">RECOMMENDED<br />Tasks for you<br /></h2>
                         <div className="filters">
                             {recommendedFilters.map((filter) => (
@@ -459,21 +493,22 @@ const Home = () => {
                         </div>
 
                         <div className="horizontal-list">
-                            <Link to="/apply-for-the-task" className='link'>
+                            <div className="link">
                                 {filteredRecommended.map((task) => (
-                                    <TaskCard
-                                        key={task.id}
-                                        variant="recommended"
-                                        title={task.title}
-                                        subtitle={task.subtitle}
-                                        points={task.points}
-                                        time={task.duration_min}
-                                        bgImage={task.bg_image}
-                                    />
+                                    <Link key={task.id} to="/requests/details" state={{ task }} style={{ textDecoration: 'none' }}>
+                                        <TaskCard
+                                            variant="recommended"
+                                            title={task.title}
+                                            subtitle={task.subtitle}
+                                            points={task.points}
+                                            time={task.duration_min}
+                                            bgImage={task.bg_image}
+                                        />
+                                    </Link>
                                 ))}
-                            </Link>
+                            </div>
                         </div>
-                    </div>
+                    </div>}
 
                     {/* Volunteer */}
                     <div className="section mt-4 relative">
@@ -628,8 +663,13 @@ const Home = () => {
                                     className="location-result-item"
                                     onClick={() => {
                                         const coords = [parseFloat(r.lat), parseFloat(r.lon)];
+                                        const label = r.display_name.split(',').slice(0, 2).join(',');
                                         setMapCenter(coords);
-                                        setLocationLabel(r.display_name.split(',').slice(0, 2).join(','));
+                                        setLocationLabel(label);
+                                        if (user?.id) {
+                                            localStorage.setItem(`loc_label_${user.id}`, label);
+                                            localStorage.setItem(`loc_coords_${user.id}`, JSON.stringify(coords));
+                                        }
                                         setLocationOpen(false);
                                         setLocationResults([]);
                                         setLocationSearch('');

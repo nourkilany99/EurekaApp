@@ -51,6 +51,17 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+.profile-img--initial {
+    background: linear-gradient(135deg, #2C5E49, #15d17a);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
 .welcome-text {
     font-size: 15px;
     font-weight: 600;

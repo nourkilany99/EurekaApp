@@ -112,11 +112,43 @@
     font-size: 16px;
 }
 
+.vol-page__featured-header {
+    margin-top: 10%;
+}
+
 .vol-page__section-title {
-    margin: 10% 0 3% 0;
+    margin: 0 0 10px 0;
     font-size: 2.2vw;
     color: #ffffff;
     -webkit-text-stroke: 1px #141414;
+}
+
+.vol-page__filter-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+}
+
+.vol-page__filter-row::-webkit-scrollbar { display: none; }
+
+.vol-page__filter-chip {
+    flex-shrink: 0;
+    background: #1e1e1e;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    color: rgba(255,255,255,0.45);
+    font-size: 11px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.vol-page__filter-chip--active {
+    background: rgba(61, 122, 96, 0.22);
+    border-color: #3D7A60;
+    color: #a8f0c6;
 }
 
 .vol-page__list {
@@ -247,4 +279,68 @@
     .vol-page__content {
         padding-inline: 18px;
     }
+}
+
+.vol-popup__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.vol-popup {
+    background: rgba(3, 41, 13, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(61, 122, 96, 0.35);
+    border-radius: 24px;
+    padding: 32px 24px 28px;
+    text-align: center;
+    max-width: 320px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+.vol-popup__icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.vol-popup__title {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    font-family: reg, sans-serif;
+    -webkit-text-stroke: 1px #03290D;
+}
+
+.vol-popup__body {
+    margin: 0 0 24px;
+    color: #b9b9b9;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.vol-popup__btn {
+    border: 0;
+    border-radius: 999px;
+    height: 44px;
+    padding: 0 32px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f6e8ff;
+    background: linear-gradient(135deg, #3D7A60 0%, #2C5E49 100%);
+    box-shadow: 0 8px 20px rgba(44, 94, 73, 0.35);
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.vol-popup__btn:active {
+    transform: translateY(1px);
+    filter: brightness(0.95);
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { UserProvider } from './context/UserContext';
 import SplashScreen from './components/SplashScreen';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -53,10 +54,14 @@ import ReportUserPage from './pages/ReportUserPage';
 import DisputeCenterPage from './pages/DisputeCenterPage';
 import BackgroundCheckPage from './pages/BackgroundCheckPage';
 import NewHome from './pages/NewHome';
+import ResetPassword from './pages/ResetPassword';
+import WalletHistory from './pages/WalletHistory';
+import RedeemPoints from './pages/RedeemPoints';
+import VolunteerCategory from './pages/VolunteerCategory';
 
 const ConditionalBottomNav = () => {
     const location = useLocation();
-    const hideBottomNav = location.pathname === "/" || location.pathname === "/splash" || location.pathname === "/Signup" || location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/learn-more";
+    const hideBottomNav = location.pathname === "/" || location.pathname === "/splash" || location.pathname === "/Signup" || location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/learn-more" || location.pathname === "/reset-password";
 
     return (
         <>
@@ -81,6 +86,7 @@ const RoutingApp = () => {
     return (
         <>
             <BrowserRouter>
+            <UserProvider>
                 <AppWrapper>
                     <Routes>
                         {/* Splash is the entry point; "/" is login */}
@@ -133,9 +139,14 @@ const RoutingApp = () => {
                         <Route path="/dispute-center" element={<DisputeCenterPage />} />
                         <Route path="/background-check" element={<BackgroundCheckPage />} />
                         <Route path="/new-home" element={<NewHome />} />
+                        <Route path="/reset-password" element={<ResetPassword />} />
+                        <Route path="/wallet-history" element={<WalletHistory />} />
+                        <Route path="/redeem-points" element={<RedeemPoints />} />
+                        <Route path="/volunteer/:category" element={<VolunteerCategory />} />
                     </Routes>
                     <ConditionalBottomNav />
                 </AppWrapper>
+            </UserProvider>
             </BrowserRouter>
         </>
     );

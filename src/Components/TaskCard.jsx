@@ -36,7 +36,7 @@ const TaskCard = ({ variant = 'recommended', title, subtitle, points, time, pric
                 <div className="task-card available-card" style={bgImage ? { backgroundImage: `url(${bgImage})` } : {}}>
                     <div className="available-overlay"></div>
                 </div>
-                {price && <div className="available-price">{price}$</div>}
+                {price && <div className="available-price" style={{ color: '#fff', textDecoration: 'none' }}>{price}$</div>}
                 <div className="available-content">
                     <div className="available-title-row">
                         <p className="available-title">{title}</p>
@@ -58,7 +58,7 @@ const TaskCard = ({ variant = 'recommended', title, subtitle, points, time, pric
                 <div className="tasks-page-card__content">
                     <p className="tasks-page-card__title">{title}</p>
                     {subtitle && <p className="tasks-page-card__description">{subtitle}</p>}
-                    {price && <span className="tasks-page-card__badge" style={{ position: 'static', display: 'inline-block', marginTop: '6px' }}>${price}</span>}
+                    {price && <span className="tasks-page-card__badge tasks-page-card__badge--price" style={{ position: 'static', display: 'inline-block', marginTop: '6px' }}>${price}</span>}
                 </div>
             </div>
         );
@@ -78,7 +78,7 @@ const TaskCard = ({ variant = 'recommended', title, subtitle, points, time, pric
                 <div className="recommended-points-container">
                     <div className="recommended-points">
                         <img src={dollarIcon} alt="dollar" className="points-dollar-icon" />
-                        <span>{points}</span>
+                        <span style={{ color: '#fff' }}>{points}</span>
                     </div>
                 </div>
             )}
