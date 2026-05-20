@@ -17,6 +17,7 @@ const WalletPage = () => (
         <div className="wallet-page__inner">
             <PageHeaderBack title="WALLET" />
             <WalletBalanceSection />
+            <WalletSecurityNotice />
             <h2 className="wallet-page__section-title">Recent Transactions</h2>
             <WalletTransactionItem
                 imageUrl={txImg1}
@@ -39,7 +40,6 @@ const WalletPage = () => (
             <PrimaryButton type="button" className="wallet-page__view-all">
                 View all
             </PrimaryButton>
-            <WalletSecurityNotice />
         </div>
     </div>
 );

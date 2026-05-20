@@ -30,7 +30,7 @@ const SkillsPage = () => (
             </section>
             <ActionButton variant="secondary">+ Add Skill</ActionButton>
             <Card>
-                <h3 className="utility-section-title">Top Skills</h3>
+                <p className="utility-section-title luicy-text">Top Skills</p>
                 <div className="ui-screen-stack">
                     {skills.map((skill) => (
                         <article key={skill.name} className="feature-card">

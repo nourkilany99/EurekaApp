@@ -21,7 +21,7 @@ const PaymentPage = () => (
             <article className="payment-method">
                 <div className="row-between">
                     <div>
-                        <h4>National Bank of Egypt</h4>
+                        <p className="luicy-text" style={{fontWeight: 'bold', margin: '0 0 3px', fontSize: '15px'}}>National Bank of Egypt</p>
                         <p>•••• •••• •••• 4523</p>
                     </div>
                     <span className="payment-method__tag">PRIMARY</span>
@@ -34,17 +34,17 @@ const PaymentPage = () => (
             <article className="payment-method">
                 <div className="row-between">
                     <div>
-                        <h4>Visa •••• 4242</h4>
+                        <p className="luicy-text" style={{fontWeight: 'bold', margin: '0 0 3px', fontSize: '15px'}}>Visa •••• 4242</p>
                         <p>Expires 12/26</p>
                     </div>
                     <span className="payment-method__tag">DEFAULT</span>
                 </div>
             </article>
             <article className="payment-method">
-                <h4>Mastercard •••• 8888</h4>
+                <p className="luicy-text" style={{fontWeight: 'bold', margin: '0 0 3px', fontSize: '15px'}}>Mastercard •••• 8888</p>
                 <p>Expires 09/27</p>
             </article>
-            <h3 className="utility-section-title">Mobile Wallets</h3>
+            <p className="utility-section-title luicy-text">Mobile Wallets</p>
             <div className="wallet-grid">
                 <div className="wallet-chip">Vodafone Cash</div>
                 <div className="wallet-chip">Fawry</div>

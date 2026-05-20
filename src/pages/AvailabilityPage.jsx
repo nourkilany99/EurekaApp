@@ -37,7 +37,7 @@ const AvailabilityPage = () => {
                     </div>
                 </Card>
                 <Card>
-                    <h3 className="utility-section-title">Preferred Time</h3>
+                    <p className="utility-section-title luicy-text">Preferred Time</p>
                     <div className="feature-time-options">
                         {['Morning', 'Afternoon', 'Evening'].map((option) => (
                             <button

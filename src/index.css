@@ -23,13 +23,17 @@ code {
 .app-container {
   width: 100%;
   max-width: 414px; /* iPhone 11 width */
-  margin: 0 auto;
+  margin: 7% auto 0;
   background-color: #141414 !important;
+}
+
+.app-container.no-margin {
+  margin-top: 0;
 }
 
 :root {
   --main-color: #2C5E49;
-  --sec-color: #A609F0;
+  --sec-color: #2C5E49;
   --white: #FFFFFF;
   --white2: #ffffffbe;
   --pink: #DDAEC5;
@@ -81,7 +85,7 @@ div[class$='-container'] {
   background-color: #141414 !important;
 }
 
-h1, h2, h3, .font-title {
+h1, h2, h3, .font-title, .luicy-text {
   font-family: 'Luicy', sans-serif !important;
 }
 

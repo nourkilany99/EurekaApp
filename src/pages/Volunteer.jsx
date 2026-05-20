@@ -47,7 +47,7 @@ const Volunteer = () => (
         <MobileTool />
         <div className="vol-page__content">
             <header className="vol-page__header">
-                <h1 className="vol-page__title">VOLENTEER</h1>
+                <p className="vol-page__title">VOLENTEER</p>
                 <div className="vol-page__coins">230,122</div>
             </header>
 
@@ -64,7 +64,7 @@ const Volunteer = () => (
                 <button type="button" className="vol-cat"><span>🍃</span>Environment</button>
             </section>
 
-            <h3 className="vol-page__section-title">Featured Opportunities</h3>
+            <p className="vol-page__section-title luicy-text">Featured Opportunities</p>
             <div className="vol-page__list">
                 {volunteerTasks.map((t) => (
                     <article key={t.id} className="vol-card">

@@ -10,7 +10,7 @@ const CallPage = () => (
         <MobileTool />
         <div className="utility-page__inner ui-screen-stack" style={{ textAlign: 'center' }}>
             <div className="profile-photo">SM</div>
-            <h2 className="utility-section-title" style={{ marginTop: 0 }}>Sarah Mckinzie</h2>
+            <p className="utility-section-title luicy-text" style={{ marginTop: 0 }}>Sarah Mckinzie</p>
             <p className="feature-muted">Calling...</p>
             <div className="feature-grid-2">
                 <ActionButton variant="secondary">Mute</ActionButton>

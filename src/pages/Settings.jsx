@@ -51,7 +51,7 @@ const Settings = () => {
 
                 {settingGroups.map((group) => (
                     <section key={group.title}>
-                        <h3 className="utility-section-title">{group.title}</h3>
+                        <p className="utility-section-title luicy-text">{group.title}</p>
                         <div className="settings-group">
                             {group.rows.map((row) => {
                                 const content = (

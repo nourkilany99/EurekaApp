@@ -1,0 +1,26 @@
+/* NewHome — inherits all classes from Home.css via the shared component styles.
+   Only overrides needed for the new page are defined here. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@font-face {
+    font-family: luicy;
+    src: url(../fonts/Luicy-Regular\ Demo.ttf);
+}
+@font-face {
+    font-family: reg;
+    src: url(../fonts/AlbertSans-Regular.ttf);
+}
+@font-face {
+    font-family: decor;
+    src: url(../fonts/MeaCulpa-Regular.ttf);
+}
+
+.nh-container {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 90px;
+    overflow-x: hidden;
+}

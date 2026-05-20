@@ -28,7 +28,7 @@ const AchievementsPage = () => (
                 <StatCard label="Points" value="45" />
             </section>
             <Card>
-                <h3 className="utility-section-title">Achievement Badges</h3>
+                <p className="utility-section-title luicy-text">Achievement Badges</p>
                 <div className="feature-badge-grid">
                     {badges.map((badge) => (
                         <article key={badge.title} className={`feature-card feature-badge ${badge.locked ? 'feature-badge--locked' : ''}`}>

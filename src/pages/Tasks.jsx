@@ -3,13 +3,15 @@ import { supabase } from '../Supabase';
 import './Tasks.css';
 import MobileTool from '../components/MobileTool';
 import GlobalSearchInput from '../components/GlobalSearchInput';
+import TaskCard from '../components/TaskCard';
+import LocationModal from '../components/LocationModal';
 
 const FALLBACK_CAT_IMAGE =
     'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop';
 
 const CATEGORIES = ['All', 'Pet Care', 'Moving Help', 'Babysitting'];
 
-const DEMO_TASKS = [
+const DEMO_TASKS_PLACEHOLDER = [
     {
         id: 'demo-1',
         title: 'Pet food',
@@ -21,7 +23,7 @@ const DEMO_TASKS = [
     {
         id: 'demo-2',
         title: 'Cat company',
-        description: 'Getting Glammazd for work event',
+        description: 'Keep a cat company while owner is at work',
         price: 245,
         image_url: FALLBACK_CAT_IMAGE,
         category: 'Pet Care',
@@ -42,61 +44,168 @@ const DEMO_TASKS = [
         image_url: 'https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=800&auto=format&fit=crop',
         category: 'Babysitting',
     },
- ];
+    {
+        id: 'demo-5',
+        title: 'Dog walking',
+        description: 'Walk a golden retriever for 30 minutes in the park',
+        price: 90,
+        image_url: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=800&auto=format&fit=crop',
+        category: 'Pet Care',
+    },
+    {
+        id: 'demo-6',
+        title: 'Furniture moving',
+        description: 'Move a sofa and two chairs to a new apartment floor',
+        price: 220,
+        image_url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+        category: 'Moving Help',
+    },
+    {
+        id: 'demo-7',
+        title: 'After-school care',
+        description: 'Pick up kids from school and watch them until 6pm',
+        price: 280,
+        image_url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop',
+        category: 'Babysitting',
+    },
+    {
+        id: 'demo-8',
+        title: 'Bird sitting',
+        description: 'Feed and care for two parrots over the weekend',
+        price: 130,
+        image_url: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?q=80&w=800&auto=format&fit=crop',
+        category: 'Pet Care',
+    },
+    {
+        id: 'demo-9',
+        title: 'Loading truck',
+        description: 'Help load a moving truck with boxes and appliances',
+        price: 200,
+        image_url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
+        category: 'Moving Help',
+    },
+    {
+        id: 'demo-10',
+        title: 'Overnight sitting',
+        description: 'Stay overnight with a toddler while parents travel',
+        price: 400,
+        image_url: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=800&auto=format&fit=crop',
+        category: 'Babysitting',
+    },
+    {
+        id: 'demo-11',
+        title: 'Rabbit care',
+        description: 'Feed and clean cage for a pet rabbit for 3 days',
+        price: 110,
+        image_url: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=800&auto=format&fit=crop',
+        category: 'Pet Care',
+    },
+    {
+        id: 'demo-12',
+        title: 'Unpacking service',
+        description: 'Unpack and organise boxes in a newly moved-in home',
+        price: 195,
+        image_url: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop',
+        category: 'Moving Help',
+    },
+    {
+        id: 'demo-13',
+        title: 'Evening babysit',
+        description: 'Watch a 5-year-old from 7pm to midnight',
+        price: 260,
+        image_url: 'https://images.unsplash.com/photo-1476703993599-0035a21b17a9?q=80&w=800&auto=format&fit=crop',
+        category: 'Babysitting',
+    },
+    {
+        id: 'demo-14',
+        title: 'Cat grooming',
+        description: 'Brush and bathe a long-haired cat at home',
+        price: 150,
+        image_url: FALLBACK_CAT_IMAGE,
+        category: 'Pet Care',
+    },
+    {
+        id: 'demo-15',
+        title: 'Appliance move',
+        description: 'Help carry a washing machine to second floor',
+        price: 240,
+        image_url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop',
+        category: 'Moving Help',
+    },
+    {
+        id: 'demo-16',
+        title: 'Weekend sitter',
+        description: 'Watch three kids Saturday and Sunday, 9am–5pm',
+        price: 500,
+        image_url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop',
+        category: 'Babysitting',
+    },
+    {
+        id: 'demo-17',
+        title: 'Dog boarding',
+        description: 'Host a small dog at your place for the weekend',
+        price: 175,
+        image_url: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop',
+        category: 'Pet Care',
+    },
+    {
+        id: 'demo-18',
+        title: 'Box delivery',
+        description: 'Transport packed boxes across town in a van',
+        price: 160,
+        image_url: 'https://images.unsplash.com/photo-1601628828688-632f38a5f20d?q=80&w=800&auto=format&fit=crop',
+        category: 'Moving Help',
+    },
+    {
+        id: 'demo-19',
+        title: 'Homework help',
+        description: 'Help an 8-year-old with math and reading after school',
+        price: 200,
+        image_url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop',
+        category: 'Babysitting',
+    },
+    {
+        id: 'demo-20',
+        title: 'Vet trip',
+        description: 'Take a cat to the vet and back, owner pays expenses',
+        price: 140,
+        image_url: FALLBACK_CAT_IMAGE,
+        category: 'Pet Care',
+    },
+];
 
 const Tasks = () => {
-    const [tasks, setTasks] = useState([]);
+    const [allTasks, setAllTasks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchText, setSearchText] = useState('');
     const [activeCategory, setActiveCategory] = useState('All');
+    const [locationOpen, setLocationOpen] = useState(false);
+    const [locationLabel, setLocationLabel] = useState('Nasr city, Home');
 
     useEffect(() => {
         const fetchTasks = async () => {
-            try {
-                const { data, error } = await supabase
-                    .from('tasks')
-                    .select('id,title,description,price,image_url,category')
-                    .order('id', { ascending: true });
-
-                if (error) {
-                    console.error('Failed to fetch tasks:', error.message);
-                    setTasks(DEMO_TASKS);
-                } else if (!data || data.length === 0) {
-                    setTasks(DEMO_TASKS);
-                } else {
-                    setTasks(data);
-                }
-            } catch (err) {
-                console.error('Failed to fetch tasks:', err);
-                setTasks(DEMO_TASKS);
-            } finally {
-                setLoading(false);
-            }
+            const { data, error } = await supabase
+                .from('page_tasks')
+                .select('*')
+                .eq('is_active', true)
+                .order('created_at', { ascending: true });
+            if (!error) setAllTasks(data || []);
+            setLoading(false);
         };
-
         fetchTasks();
     }, []);
 
     const filteredTasks = useMemo(() => {
-        return tasks.filter((task) => {
+        return allTasks.filter((task) => {
             const matchesCategory =
                 activeCategory === 'All' ||
                 (task.category || '').toLowerCase() === activeCategory.toLowerCase();
             const matchesSearch = (task.title || '')
                 .toLowerCase()
                 .includes(searchText.trim().toLowerCase());
-
             return matchesCategory && matchesSearch;
         });
-    }, [activeCategory, searchText, tasks]);
-
-    const getTaskMeta = (task, index) => ({
-        location: task.category === 'Moving Help' ? 'Brooklyn Heights' : task.category === 'Babysitting' ? 'Queens, NY' : 'Upper West Side, NY',
-        duration: ['2 hours', '1.5 hours', '3 hours', '45 mins'][index % 4],
-        tag: task.category === 'Babysitting' ? 'Urgent' : task.category === 'Moving Help' ? 'Easy' : 'Hot',
-        assignee: ['Sarah M.', 'John K.', 'Emily R.', 'Mia L.'][index % 4],
-        avatar: ['S', 'J', 'E', 'M'][index % 4],
-    });
+    }, [allTasks, activeCategory, searchText]);
 
 
 
@@ -107,11 +216,11 @@ const Tasks = () => {
             
             <header className="tasks-screen__header">
                 <div>
-                    <h1 className="tasks-screen__title">TASKS</h1>
+                    <p className="tasks-screen__title">TASKS</p>
                     <p className="tasks-screen__subtitle">Seamless task management experience</p>
                 </div>
-                <button type="button" className="tasks-screen__location-pill">
-                    Nasr city, Home
+                <button type="button" className="tasks-screen__location-pill" onClick={() => setLocationOpen(true)}>
+                    {locationLabel}
                 </button>
             </header>
             
@@ -161,43 +270,27 @@ const Tasks = () => {
                 <p className="tasks-screen__status">No tasks found.</p>
             ) : (
                 <>
-                    <section className="tasks-screen__matched">
-                        <h2>You&apos;re Matched!</h2>
-                        <button type="button">View task</button>
-                    </section>
-
-                    <section className="tasks-screen__list" aria-label="Available tasks">
-                        {filteredTasks.map((task, index) => {
-                            const meta = getTaskMeta(task, index);
-
-                            return (
-                                <article key={task.id} className="tasks-list-card">
-                                    <div className="tasks-list-card__media" style={{ backgroundImage: `url(${task.image_url || FALLBACK_CAT_IMAGE})` }}>
-                                        <span className={`tasks-list-card__tag is-${meta.tag.toLowerCase().replace(/\s+/g, '-')}`}>{meta.tag}</span>
-                                    </div>
-                                    <div className="tasks-list-card__body">
-                                        <h3 className="tasks-list-card__title">{task.title}</h3>
-                                        <div className="tasks-list-card__meta-line">
-                                            <span>◉ {meta.location}</span>
-                                        </div>
-                                        <div className="tasks-list-card__meta-line">
-                                            <span>◷ {meta.duration}</span>
-                                        </div>
-                                        <div className="tasks-list-card__footer">
-                                            <div className="tasks-list-card__person">
-                                                <span className="tasks-list-card__avatar">{meta.avatar}</span>
-                                                <span>{meta.assignee}</span>
-                                            </div>
-                                            <span className="tasks-list-card__price">$ {task.price}</span>
-                                        </div>
-                                    </div>
-                                </article>
-                            );
-                        })}
+                    <section className="tasks-screen__list tasks-blob-grid" aria-label="Available tasks">
+                        {filteredTasks.map((task) => (
+                            <TaskCard
+                                key={task.id}
+                                variant="available"
+                                bgImage={task.image_url || FALLBACK_CAT_IMAGE}
+                                title={task.title}
+                                subtitle={task.description}
+                                price={task.price}
+                                tag={task.tag}
+                            />
+                        ))}
                     </section>
                 </>
             )}
         </main>
+        <LocationModal
+            isOpen={locationOpen}
+            onClose={() => setLocationOpen(false)}
+            onSelect={(label) => { setLocationLabel(label); setLocationOpen(false); }}
+        />
         </>
     );
 };

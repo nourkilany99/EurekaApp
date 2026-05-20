@@ -1,4 +1,5 @@
 import React from 'react';
+import groovyFrame from '../Assets/groovy-frame.svg';
 import './WalletSecurityNotice.css';
 
 const WalletSecurityNotice = () => (
@@ -10,11 +11,7 @@ const WalletSecurityNotice = () => (
                 are <strong>safely</strong> held until the task is completed and confirmed by both
                 users.
             </p>
-            <div className="wallet-security-notice__badge" aria-hidden>
-                <span className="wallet-security-notice__c1" />
-                <span className="wallet-security-notice__c2" />
-                <span className="wallet-security-notice__c3" />
-            </div>
+            <img src={groovyFrame} alt="" className="wallet-security-notice__badge" />
         </div>
     </section>
 );

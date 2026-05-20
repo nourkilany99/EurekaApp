@@ -46,7 +46,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #a200ff;
+    background: #2C5E49;
     border: none;
     color: #fff;
     padding: 8px 14px;
@@ -99,7 +99,7 @@
     min-width: 56px;
 }
 .jom-marker-tooltip-price {
-    background: #3f114d;
+    background: #1A3D2E;
     color: #fff;
     font-size: 11px;
     font-weight: bold;
@@ -123,7 +123,7 @@
     right: 0;
     bottom: 0;
     z-index: 40;
-    background: linear-gradient(180deg, rgba(63, 17, 77, 0.8) 0%, rgba(18, 18, 18, 1) 80%);
+    background: linear-gradient(180deg, rgba(26, 61, 46, 0.8) 0%, rgba(18, 18, 18, 1) 80%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-top-left-radius: 40px;
@@ -201,7 +201,7 @@
 
 .jom-apply-btn {
     width: 100%;
-    background: #a200ff;
+    background: #2C5E49;
     color: #fff;
     border: none;
     border-radius: 12px;

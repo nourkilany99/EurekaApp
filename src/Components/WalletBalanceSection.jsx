@@ -7,14 +7,19 @@ const WalletBalanceSection = ({
     pending = '42$',
 }) => (
     <section className="wallet-balance-section">
-        <p className="wallet-balance-section__big">{balance}</p>
-        <p className="wallet-balance-section__lbl">Available Balance</p>
-        <div className="wallet-balance-section__cards">
-            <div className="wallet-balance-section__card wallet-balance-section__card--earned">
-                <p className="wallet-balance-section__val">{totalEarned}</p>
-                <p className="wallet-balance-section__cap">Total Earned</p>
+        <div className="wallet-credit-card">
+            <div className="wallet-credit-card__chip">
+                <div className="wallet-credit-card__chip-inner" />
             </div>
-            <div className="wallet-balance-section__card wallet-balance-section__card--pending">
+            <div className="wallet-credit-card__top-row">
+                <span className="wallet-credit-card__brand">EUREKA</span>
+            </div>
+            <p className="wallet-balance-section__lbl">Available Balance</p>
+            <p className="wallet-balance-section__big">{balance}</p>
+            <div className="wallet-credit-card__glare" />
+        </div>
+        <div className="wallet-balance-section__cards">
+<div className="wallet-balance-section__card wallet-balance-section__card--pending">
                 <p className="wallet-balance-section__val">{pending}</p>
                 <p className="wallet-balance-section__cap">Pending Earnings</p>
             </div>

@@ -63,10 +63,10 @@ const HelpSupport = () => {
                     </button>
                 </div>
 
-                <h2 className="utility-section-title">Frequently Asked Questions</h2>
+                <p className="utility-section-title luicy-text">Frequently Asked Questions</p>
                 {faqSections.map((section, sectionIndex) => (
                     <div key={section.title}>
-                        <h3 className="utility-section-title">{section.title}</h3>
+                        <p className="utility-section-title luicy-text">{section.title}</p>
                         <div className="faq-card">
                             {section.items.map((item, itemIndex) => {
                                 const id = `${sectionIndex}-${itemIndex}`;

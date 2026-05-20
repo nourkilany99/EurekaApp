@@ -46,9 +46,9 @@ const ActionButton = ({ type, onClick }) => {
 const ProfileHeader = () => (
     <div className="profile-header-container">
         <ActionButton type="gear" />
-        <h1 className="profile-header-title">
+        <p className="profile-header-title">
             YOUR<br />PROFILE
-        </h1>
+        </p>
     </div>
 );
 
@@ -84,7 +84,7 @@ const NavItem = ({ label, route }) => (
     <Link to={route} className="nav-item-row">
         <span className="nav-item-label">{label}</span>
         <svg className="nav-item-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     </Link>
 );
@@ -111,16 +111,16 @@ const ProfilePage = () => {
             <div className="profile-identity">
                 <img src="https://i.pravatar.cc/150?img=32" alt="Seif Ibrahim" className="profile-avatar" />
                 <div className="profile-identity-info">
-                    <h2 className="profile-identity-name">
+                    <p className="profile-identity-name">
                         Seif Ibrahim <span className="profile-identity-age">23 old</span>
-                    </h2>
+                    </p>
                     <p className="profile-identity-role">Art designer , dog friendly</p>
                 </div>
                 <div className="profile-identity-actions">
                     <StatCard rating="4.9" />
-                    <button 
-                        type="button" 
-                        className="profile-edit-btn" 
+                    <button
+                        type="button"
+                        className="profile-edit-btn"
                         onClick={() => navigate('/edit-profile')}
                         aria-label="Edit Profile"
                     >
@@ -165,15 +165,13 @@ const ProfilePage = () => {
                 </div>
             </InfoCard>
 
-            <InfoCard title="Portfolio" actionLabel="View all" actionRoute="/portfolio">
-                <InfoCard title="Skills" onEdit={() => navigate('/skills')}>
-                    <div className="skills-container">
-                        <span className="skill-pill">Dog Walking</span>
-                        <span className="skill-pill">Babysitting</span>
-                        <span className="skill-pill">Moving Assistance</span>
-                        <span className="skill-pill">Makeup Services</span>
-                    </div>
-                </InfoCard>
+            <InfoCard title="Skills" onEdit={() => navigate('/skills')}>
+                <div className="skills-container">
+                    <span className="skill-pill">Dog Walking</span>
+                    <span className="skill-pill">Babysitting</span>
+                    <span className="skill-pill">Moving Assistance</span>
+                    <span className="skill-pill">Makeup Services</span>
+                </div>
             </InfoCard>
 
             <InfoCard title="Ratings & Reviews" showEdit={false} actionLabel="View all" actionRoute="/reviews-ratings">
@@ -195,14 +193,15 @@ const ProfilePage = () => {
                     </div>
                     <p className="review-text">&quot;Very responsible and arrived on time. My<br />dog loved the walk!&quot;</p>
                 </div>
-                
-                <button 
-                    type="button" 
+
+                <button
+                    type="button"
                     className="view-all-reviews-btn"
                     onClick={() => navigate('/reviews-ratings')}
                 >
                     View All Reviews
                 </button>
+
             </InfoCard>
 
             <InfoCard title="Achievements" actionLabel="Manage" actionRoute="/achievements">

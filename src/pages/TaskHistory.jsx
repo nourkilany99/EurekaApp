@@ -50,7 +50,7 @@ const TaskHistory = () => (
 
             {completedTasks.map((task) => <TaskCard key={task.title} task={task} />)}
 
-            <h3 className="utility-section-title">Cancelled Tasks</h3>
+            <p className="utility-section-title luicy-text">Cancelled Tasks</p>
             {cancelledTasks.map((task) => <TaskCard key={task.title} task={task} cancelled />)}
         </div>
     </div>

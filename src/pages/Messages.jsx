@@ -16,7 +16,7 @@ const MessageItem = ({ item }) => (
     <article className="messages-list-item">
         <div className="utility-avatar">🧑</div>
         <div className="messages-list-item__main">
-            <h4>{item.name}</h4>
+            <p className="luicy-text" style={{margin: '0 0 3px', fontSize: '16px', fontWeight: '700'}}>{item.name}</p>
             <p>{item.text}</p>
         </div>
         <div>

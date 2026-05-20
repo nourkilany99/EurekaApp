@@ -30,13 +30,13 @@ const Home = () => {
 
                 <p className='login_p2'>Create your account and start turning your everyday skills into real cash.</p>
                 <Link to='/home' className='link'>
-                    <LogBtn text='Continue with email address' icon={emailIcon} style={{ width: "30vw" }} />
+                    <LogBtn text='Continue with email address' icon={emailIcon} style={{ width: "60vw" }} />
                 </Link>
                 <Link to='/home' className='link'>
-                    <LogBtn text='Continue with email address' icon={gmailIcon} style={{ width: "30vw" }} />
+                    <LogBtn text='Continue with email address' icon={gmailIcon} style={{ width: "60vw" }} />
                 </Link>
                 <Link to='/home' className='link'>
-                    <LogBtn text='Continue with email address' icon={emailIcon} style={{ width: "30vw" }} />
+                    <LogBtn text='Continue with email address' icon={emailIcon} style={{ width: "60vw" }} />
                 </Link>
                 <Link to='/Signup' className='link'>
                     <p className='signup_btn'>Signup</p>

@@ -18,7 +18,7 @@ const ReportsPage = () => (
                 <StatCard label="Success Rate" value="96%" />
             </section>
             <Card>
-                <h3 className="utility-section-title">Weekly Progress</h3>
+                <p className="utility-section-title luicy-text">Weekly Progress</p>
                 <div className="ui-report-line">
                     <span>Task Completion</span>
                     <strong>84%</strong>
@@ -31,7 +31,7 @@ const ReportsPage = () => (
                 <ProgressBar value={96} />
             </Card>
             <Card>
-                <h3 className="utility-section-title">Top Categories</h3>
+                <p className="utility-section-title luicy-text">Top Categories</p>
                 <p className="ui-muted-text">Pet Care, Babysitting, Moving Help</p>
             </Card>
         </div>

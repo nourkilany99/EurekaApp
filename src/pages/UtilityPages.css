@@ -22,8 +22,8 @@
 
 .utility-section-title {
     margin: 18px 0 10px;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 2vw;
+    font-weight: 0;
 }
 
 .utility-search {
@@ -48,7 +48,9 @@
     outline: none;
 }
 
-.utility-search input::placeholder { color: #777; }
+.utility-search input::placeholder {
+    color: #777;
+}
 
 .utility-search.utility-search--tight {
     margin: 0;
@@ -93,7 +95,9 @@
     overflow: hidden;
 }
 
-.faq-item + .faq-item { border-top: 1px solid #242426; }
+.faq-item+.faq-item {
+    border-top: 1px solid #242426;
+}
 
 .faq-item__btn {
     width: 100%;
@@ -176,14 +180,19 @@
     line-height: 0.95;
 }
 
-.reviews-score__stars { color: #ffc926; }
+.reviews-score__stars {
+    color: #ffc926;
+}
+
 .reviews-score__count {
     margin-top: 4px;
     font-size: 11px;
     color: #9a9a9a;
 }
 
-.reviews-bars { flex: 1; }
+.reviews-bars {
+    flex: 1;
+}
 
 .reviews-bar {
     display: grid;
@@ -474,7 +483,11 @@
     margin-bottom: 10px;
 }
 
-.messages-list-item__main { flex: 1; min-width: 0; }
+.messages-list-item__main {
+    flex: 1;
+    min-width: 0;
+}
+
 .messages-list-item__main h4 {
     margin: 0 0 3px;
     font-size: 16px;
@@ -533,8 +546,14 @@
     margin-bottom: 18px;
 }
 
-.chat-bubble-wrap { display: flex; flex-direction: column; }
-.chat-bubble-wrap.mine { align-items: flex-end; }
+.chat-bubble-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-bubble-wrap.mine {
+    align-items: flex-end;
+}
 
 .chat-bubble {
     max-width: 82%;
@@ -746,7 +765,9 @@
     background: #2C5E49;
 }
 
-.toggle.is-on::after { left: 21px; }
+.toggle.is-on::after {
+    left: 21px;
+}
 
 .profile-photo {
     width: 110px;
@@ -811,7 +832,9 @@ textarea.field-input {
     font-size: 14px;
 }
 
-.settings-row:last-child { border-bottom: none; }
+.settings-row:last-child {
+    border-bottom: none;
+}
 
 .settings-row__left {
     display: flex;
@@ -819,7 +842,9 @@ textarea.field-input {
     gap: 10px;
 }
 
-.settings-arrow { color: #777; }
+.settings-arrow {
+    color: #777;
+}
 
 .logout-btn {
     width: 100%;

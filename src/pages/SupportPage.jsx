@@ -46,7 +46,7 @@ const SupportPage = () => {
                 </div>
                 {faqSections.map((section, sIndex) => (
                     <section key={section.title}>
-                        <h3 className="utility-section-title">{section.title}</h3>
+                        <p className="utility-section-title luicy-text">{section.title}</p>
                         <div className="faq-card">
                             {section.items.map((item, iIndex) => {
                                 const id = `${sIndex}-${iIndex}`;

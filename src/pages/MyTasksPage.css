@@ -32,8 +32,8 @@
 }
 
 .my-tasks-page .my-tasks-header__add {
-    background: linear-gradient(135deg, #af3bff 0%, #7d26f2 100%);
-    box-shadow: 0 8px 20px rgba(125, 38, 242, 0.35);
+    background: linear-gradient(135deg, #3D7A60 0%, #2C5E49 100%);
+    box-shadow: 0 8px 20px rgba(44, 94, 73, 0.35);
     font-size: 12px;
     padding: 8px 14px;
 }

@@ -3,20 +3,101 @@
     padding: 8px 0 20px;
 }
 
+/* Credit Card */
+.wallet-credit-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.586;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #0f2a1e 0%, #1a4a32 40%, #2C5E49 75%, #15d17a22 100%);
+    border: 1px solid rgba(21, 209, 122, 0.2);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255,255,255,0.04) inset,
+        0 1px 0 rgba(255,255,255,0.1) inset;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.wallet-credit-card__glare {
+    position: absolute;
+    top: -40%;
+    left: -30%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    transform: rotate(-20deg);
+}
+
+.wallet-credit-card__top-row {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    right: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wallet-credit-card__brand {
+    font-size: 15px;
+    font-weight: 800;
+    color: #15d17a;
+    letter-spacing: 0.15em;
+    font-family: 'Inter', sans-serif;
+}
+
+.wallet-credit-card__dots {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    font-family: 'Inter', sans-serif;
+}
+
+.wallet-credit-card__chip {
+    position: absolute;
+    top: 50px;
+    left: 22px;
+    width: 38px;
+    height: 28px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #d4a843 0%, #f0c850 50%, #b8902a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wallet-credit-card__chip-inner {
+    width: 60%;
+    height: 70%;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #e8b84b, #c49a35);
+}
+
 .wallet-balance-section__big {
-    margin: 0;
-    font-size: 36px;
+    margin: 4px 0 0;
+    font-size: 32px;
     font-weight: 800;
     color: #fff;
     letter-spacing: 0.02em;
     font-family: 'Inter', sans-serif;
+    text-align: left;
 }
 
 .wallet-balance-section__lbl {
-    margin: 8px 0 20px;
-    font-size: 13px;
-    color: #9ca3af;
+    margin: 0;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
     font-weight: 500;
+    text-align: left;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .wallet-balance-section__cards {

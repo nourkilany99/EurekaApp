@@ -7,7 +7,7 @@ const PaymentCard = ({ title, subtitle, tag, withActions }) => (
     <article className="payment-method">
         <div className="row-between">
             <div>
-                <h4>{title}</h4>
+                <p className="luicy-text" style={{fontWeight: 'bold', margin: '0 0 3px', fontSize: '15px'}}>{title}</p>
                 <p>{subtitle}</p>
             </div>
             {tag ? <span className="payment-method__tag">{tag}</span> : null}
@@ -46,7 +46,7 @@ const PaymentSetup = () => (
             <PaymentCard title="Visa •••• 4242" subtitle="Expires 12/26" tag="DEFAULT" />
             <PaymentCard title="Mastercard •••• 8888" subtitle="Expires 12/26" />
 
-            <h3 className="utility-section-title">Mobile Wallets</h3>
+            <p className="utility-section-title luicy-text">Mobile Wallets</p>
             <div className="wallet-grid">
                 <div className="wallet-chip">Vodafone Cash</div>
                 <div className="wallet-chip">Fawry</div>

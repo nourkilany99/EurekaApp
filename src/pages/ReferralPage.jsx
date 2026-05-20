@@ -14,7 +14,7 @@ const ReferralPage = () => (
         <div className="utility-page__inner ui-screen-stack">
             <PageHeaderBack title="REFER & EARN" />
             <Card>
-                <h3 className="utility-section-title">Referral Code</h3>
+                <p className="utility-section-title luicy-text">Referral Code</p>
                 <div className="feature-row">
                     <strong>ALEX2024</strong>
                     <ActionButton variant="secondary">Copy</ActionButton>
@@ -26,7 +26,7 @@ const ReferralPage = () => (
                 <StatCard label="Earned" value="$640" tone="success" />
             </section>
             <Card>
-                <h3 className="utility-section-title">Milestones</h3>
+                <p className="utility-section-title luicy-text">Milestones</p>
                 <p className="feature-muted">5 invites</p>
                 <ProgressBar value={100} />
                 <p className="feature-muted" style={{ marginTop: 10 }}>10 invites</p>
