@@ -495,7 +495,7 @@ const Home = () => {
                         <div className="horizontal-list">
                             <div className="link">
                                 {filteredRecommended.map((task) => (
-                                    <Link key={task.id} to="/requests/details" state={{ task }} style={{ textDecoration: 'none' }}>
+                                    <Link key={task.id} to="/apply-for-the-task" state={{ task }} style={{ textDecoration: 'none' }}>
                                         <TaskCard
                                             variant="recommended"
                                             title={task.title}

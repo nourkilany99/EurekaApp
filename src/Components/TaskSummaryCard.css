@@ -38,6 +38,7 @@
     font-size: 20px;
     font-weight: 800;
     color: #fff;
+    -webkit-text-stroke: 1px #2a2a2a;
 }
 
 .task-summary-card__rate {
